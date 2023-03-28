@@ -1,0 +1,1 @@
+# UBC course scheduler in Prolog
