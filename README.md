@@ -4,6 +4,4 @@
 1. run
 
     ```swipl -s main.pl ```
-2. call a query
-
-    ```server(8000).```
+2. then, access to `localhost:8000`
