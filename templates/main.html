@@ -3,69 +3,357 @@
   <title>{{title}}</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/files/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css" />
+
+
+  <!-- <link rel="stylesheet" href="/files/style.css"> -->
+
+  <style>
+    .selected-item {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.5rem;
+      margin: 0.25rem;
+      background-color: #f1f1f1;
+      border-radius: 0.25rem;
+    }
+
+    .selected-item span {
+      margin-right: 0.5rem;
+    }
+
+    .selected-item i {
+      cursor: pointer;
+    }
+
+    label.checkbox-inline {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  </style>
 </head>
 <body class="container">
   <div id="header">
     {{body}}
   </div>
   <div id="body">
-    <div id="interface">
+    <div id="interface" class="pb-3">
       <div class="btn-group" role="group" aria-label="Default button group">
         <a href="/" type="button" class="btn btn-outline-success">Standard Form</a>
         <a href="#" type="button" class="btn btn-outline-success">Natural Language</a>
       </div>
-    </div>  
-    <div id="standard-form">
-      <form class="row g-3">
-        <div class="col-md-12">
-          <label for="customRange2" class="form-label">Number of credits</label>
-          <output>12</output>
-          <input type="range" value="12" class="form-range" min="9" max="18" id="customRange2" oninput="this.previousElementSibling.value = this.value">
-        </div>
-        <div class="col-md-4">
-          <label for="validationDefault01" class="form-label">First name</label>
-          <input type="text" class="form-control" id="validationDefault01" value="Mark" required>
-        </div>
-        <div class="col-md-4">
-          <label for="validationDefault02" class="form-label">Last name</label>
-          <input type="text" class="form-control" id="validationDefault02" value="Otto" required>
-        </div>
-        <div class="col-md-4">
-          <label for="validationDefaultUsername" class="form-label">Username</label>
-          <div class="input-group">
-            <span class="input-group-text" id="inputGroupPrepend2">@</span>
-            <input type="text" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required>
-          </div>
-        </div>
+    </div>
+    <div id="standard-form" class="pt-3 border border-info">
+      <form class="row g-3 mx-2" id="my-form" method="POST" action="/search">
         <div class="col-md-6">
-          <label for="validationDefault03" class="form-label">City</label>
-          <input type="text" class="form-control" id="validationDefault03" required>
+          <label for="credits" class="form-label">Number of credits</label>
+          <output value="this.textContent">12</output>
+          <input type="range" name="credits" value="12" class="form-range" min="9" max="18" id="credits" oninput="this.previousElementSibling.value = this.value">
         </div>
-        <div class="col-md-3">
-          <label for="validationDefault04" class="form-label">State</label>
-          <select class="form-select" id="validationDefault04" required>
-            <option selected disabled value="">Choose...</option>
-            <option>...</option>
-          </select>
-        </div>
-        <div class="col-md-3">
-          <label for="validationDefault05" class="form-label">Zip</label>
-          <input type="text" class="form-control" id="validationDefault05" required>
-        </div>
-        <div class="col-12">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-            <label class="form-check-label" for="invalidCheck2">
-              Agree to terms and conditions
-            </label>
+        <div class="col-md-4">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="multiDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <label for="courses" class="form-label">Select Courses</label>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="multiDropdown">
+              <li><a class="dropdown-item course" href="#" data-value="CPSC">CPSC</a></li>
+              <li><a class="dropdown-item course" href="#" data-value="MATH">MATH</a></li>
+              <li><a class="dropdown-item course" href="#" data-value="ECON">ECON</a></li>
+              <li><a class="dropdown-item course" href="#" data-value="PHYS">PHYS</a></li>
+              <li><a class="dropdown-item course" href="#" data-value="BIOL">BIOL</a></li>
+            </ul>
           </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Selected Courses</h5>
+              <div id="selectedOptions"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="multiDropdownYear" data-bs-toggle="dropdown" aria-expanded="false">
+              Select Years
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="multiDropdownYear">
+              <li><a class="dropdown-item year" href="#" data-value="1">1</a></li>
+              <li><a class="dropdown-item year" href="#" data-value="2">2</a></li>
+              <li><a class="dropdown-item year" href="#" data-value="3">3</a></li>
+              <li><a class="dropdown-item year" href="#" data-value="4">4</a></li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Selected Years</h5>
+              <div id="selectedOptionsYear"></div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-md-4">
+          <label class="form-label">week</label>
+          <div>
+            <label class="checkbox-inline"><input type="checkbox" checked name="option[]" value="m">m</label>
+            <label class="checkbox-inline"><input type="checkbox" checked name="option[]" value="t">t</label>
+            <label class="checkbox-inline"><input type="checkbox" checked name="option[]" value="w">w</label>
+            <label class="checkbox-inline"><input type="checkbox" checked name="option[]" value="t">t</label>
+            <label class="checkbox-inline"><input type="checkbox" checked name="option[]" value="f">f</label>
+          </div>
+        </div> -->
+        <div class="col-md-8">
+          <label for="validationDefault02" class="form-label">Specific Class (Each Classes has to be separated by comma)</label>
+          <input type="text" name="specific-course" class="form-control" id="validationDefault02" value="" placeholder="e.g.: CPCS312, MATH304">
+        </div>
+        <div class="col-md-12">
+          <label class="form-label">Time slots you don't want to have a class</label>
+          <div id="time-slots-container">
+            <div class="time-slot row">
+              <div class="col-md-2">
+                <label for="day-of-week-1">Day of Week</label>
+                <select class="form-control day-of-week" id="day-of-week-1">
+                  <option value="">Select a day</option>
+                  <option value="Monday">Monday</option>
+                  <option value="Tuesday">Tuesday</option>
+                  <option value="Wednesday">Wednesday</option>
+                  <option value="Thursday">Thursday</option>
+                  <option value="Friday">Friday</option>
+                </select>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="start-time">Start Time</label>
+                <input type="time" class="form-control start-time" required>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="end-time">End Time</label>
+                <input type="time" class="form-control end-time" required>
+              </div>
+              <button class="btn btn-danger remove-time-slot col-md-1" type="button">Remove</button>
+            </div>
+          </div>
+          <button class="btn btn-primary add-time-slot" type="button">Add Time Slot</button>
         </div>
         <div class="col-12">
           <button class="btn btn-primary" type="submit">Submit form</button>
         </div>
       </form> 
     </div>
+    <div id="schedule">
+      
+    </div>
   </div>
+
+  <script>
+    // form
+    const form = document.querySelector('#my-form');
+    form.addEventListener('submit', (event) => {
+      // Prevent the default form submission behavior
+      event.preventDefault();
+  
+      // Get the form data as an object
+      const formData = new FormData(form);
+
+      // add courses
+      let elList = document.querySelectorAll('.selected-course');
+      let items = Array.from(elList).map(item => item.getAttribute('data-value').toLowerCase());
+      formData.append('courses', JSON.stringify(items));
+      // add years
+      elList = document.querySelectorAll('.selected-year');
+      items = Array.from(elList).map(item => item.getAttribute('data-value').toLowerCase());
+      formData.append('years', JSON.stringify(items));
+      // time slots
+      elList = document.querySelectorAll('.day-of-week');
+      items = Array.from(elList).map(item => item.options[item.selectedIndex].value.toLowerCase())
+      formData.append('day-of-weeks', JSON.stringify(items));
+      elList = document.querySelectorAll('.start-time');
+      items = Array.from(elList).map(item => item.value.toLowerCase());
+      formData.append('start-times', JSON.stringify(items));
+      elList = document.querySelectorAll('.end-time');
+      items = Array.from(elList).map(item => item.value.toLowerCase())
+      formData.append('end-times', JSON.stringify(items));
+      
+
+      const data = Object.fromEntries(formData.entries());
+  
+      // Send a custom GET request to the server
+      const url = '/search';
+      fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data),
+      })
+      .then(response => response.text())
+      .then(data => console.log(data))
+      .catch(error => console.error(error))
+    });
+    
+
+    // Add click event listener to dropdown items
+    $('.dropdown-item').on('click', function(e) {
+      e.preventDefault();
+      var selectedValue = $(this).data('value');
+      $(this).toggleClass('active');
+      let label = $(this).parent().parent().attr("aria-labelledby");
+      updateSelectedOptions(label);
+    });
+
+    // Add click event listener to cancel icons
+    $('#selectedOptions').on('click', '.cancel-icon', function() {
+      var selectedValue = $(this).closest('.selected-item').data('value');
+      $('[data-value="' + selectedValue + '"]').removeClass('active');
+      let label = $('[data-value="' + selectedValue + '"]').parent().parent().attr("aria-labelledby");
+      updateSelectedOptions(label);
+    });
+    $('#selectedOptionsYear').on('click', '.cancel-icon', function() {
+      var selectedValue = $(this).closest('.selected-item').data('value');
+      $('[data-value="' + selectedValue + '"]').removeClass('active');
+      let label = $('[data-value="' + selectedValue + '"]').parent().parent().attr("aria-labelledby");
+      updateSelectedOptions(label);
+    });
+
+    // Update selected options in card text
+    function updateSelectedOptions(label) {
+      var selectedValues = [];
+      if (label === "multiDropdownYear") {
+        $('.dropdown-item.year.active').each(function() {
+          selectedValues.push($(this).data('value'));
+        });
+      } else {
+        $('.dropdown-item.course.active').each(function() {
+          selectedValues.push($(this).data('value'));
+        });
+      }
+    
+      const selectedOptions = (label === "multiDropdownYear") ? '#selectedOptionsYear' : '#selectedOptions';
+      const name = (label === "multiDropdownYear") ? 'year' : 'course';
+      var $selectedOptionsContainer = $(selectedOptions);
+      $selectedOptionsContainer.empty();
+      if (selectedValues.length > 0) {
+        $.each(selectedValues, function(index, value) {
+          var $selectedItem = $('<div>', {class: `selected-item selected-${name}`, 'data-value': value}).appendTo($selectedOptionsContainer);
+          $('<span>', {text: value}).appendTo($selectedItem);
+          $('<i>', {class: 'bi bi-x-circle cancel-icon'}).appendTo($selectedItem);
+        });
+      } else {
+        $selectedOptionsContainer.html('<p>No options selected.</p>');
+      }
+    }
+
+    // Add Time Slot button
+    const addTimeSlotBtn = document.querySelector('.add-time-slot');
+    addTimeSlotBtn.addEventListener('click', addTimeSlot);
+
+    // Remove Time Slot button
+    document.addEventListener('click', function(event) {
+      if (event.target && event.target.classList.contains('remove-time-slot')) {
+        const timeSlot = event.target.closest('.time-slot');
+        timeSlot.remove();
+      }
+    });
+
+    function addTimeSlot() {
+      const timeSlotsContainer = document.getElementById('time-slots-container');
+      
+      // Create new time slot
+      const newTimeSlot = document.createElement('div');
+      newTimeSlot.classList.add('time-slot');
+      newTimeSlot.classList.add('row');
+      
+      // Add day of week form field
+      const dayOfWeekGroup = document.createElement('div');
+      dayOfWeekGroup.classList.add('col-md-2');
+      
+      const dayOfWeekLabel = document.createElement('label');
+      dayOfWeekLabel.textContent = 'Day of Week'
+      dayOfWeekLabel.setAttribute('for', 'day-of-week-1');
+
+      const dayOfWeekSelect = document.createElement('select');
+      dayOfWeekSelect.setAttribute('id', 'day-of-week-1');
+      // dayOfWeekSelect.setAttribute('name', 'day-of-week[]');
+      dayOfWeekSelect.classList.add('form-control', 'day-of-week');
+
+      const dayOfWeekOption = document.createElement('option');
+      dayOfWeekOption.textContent = 'Select a day'
+      dayOfWeekOption.setAttribute('value', '');
+      const dayOfWeekMonday = document.createElement('option');
+      dayOfWeekMonday.textContent = 'Monday'
+      dayOfWeekMonday.setAttribute('value', 'Monday');
+      const dayOfWeekTuesday = document.createElement('option');
+      dayOfWeekTuesday.textContent = 'Tuesday'
+      dayOfWeekTuesday.setAttribute('value', 'Tuesday');
+      const dayOfWeekWednesday = document.createElement('option');
+      dayOfWeekWednesday.textContent = 'Wednesday'
+      dayOfWeekWednesday.setAttribute('value', 'Wednesday');
+      const dayOfWeekThursday = document.createElement('option');
+      dayOfWeekThursday.textContent = 'Thursday'
+      dayOfWeekThursday.setAttribute('value', 'Thursday');
+      const dayOfWeekFriday = document.createElement('option');
+      dayOfWeekFriday.textContent = 'Friday'
+      dayOfWeekFriday.setAttribute('value', 'Friday');
+      dayOfWeekSelect.appendChild(dayOfWeekOption);
+      dayOfWeekSelect.appendChild(dayOfWeekMonday);
+      dayOfWeekSelect.appendChild(dayOfWeekTuesday);
+      dayOfWeekSelect.appendChild(dayOfWeekWednesday);
+      dayOfWeekSelect.appendChild(dayOfWeekThursday);
+      dayOfWeekSelect.appendChild(dayOfWeekFriday);
+      
+      dayOfWeekGroup.appendChild(dayOfWeekLabel);
+      dayOfWeekGroup.appendChild(dayOfWeekSelect);
+
+      
+      // Add start time form field
+      const startTimeGroup = document.createElement('div');
+      startTimeGroup.classList.add('form-group');
+      startTimeGroup.classList.add('col-md-4');
+      
+      const startTimeLabel = document.createElement('label');
+      startTimeLabel.textContent = 'Start Time';
+      startTimeLabel.setAttribute('for', 'start-time');
+      
+      const startTimeInput = document.createElement('input');
+      startTimeInput.setAttribute('type', 'time');
+      startTimeInput.classList.add('form-control', 'start-time');
+      // startTimeInput.setAttribute('name', 'start-time[]');
+      startTimeInput.setAttribute('required', '');
+      
+      startTimeGroup.appendChild(startTimeLabel);
+      startTimeGroup.appendChild(startTimeInput);
+      
+      // Add end time form field
+      const endTimeGroup = document.createElement('div');
+      endTimeGroup.classList.add('form-group');
+      endTimeGroup.classList.add('col-md-4');
+      
+      const endTimeLabel = document.createElement('label');
+      endTimeLabel.textContent = 'End Time';
+      endTimeLabel.setAttribute('for', 'end-time');
+      
+      const endTimeInput = document.createElement('input');
+      endTimeInput.setAttribute('type', 'time');
+      endTimeInput.classList.add('form-control', 'end-time');
+      // endTimeInput.setAttribute('name', 'end-time[]');
+      endTimeInput.setAttribute('required', '');
+      
+      endTimeGroup.appendChild(endTimeLabel);
+      endTimeGroup.appendChild(endTimeInput);
+      
+      // Add remove button
+      const removeBtn = document.createElement('button');
+      removeBtn.classList.add('btn', 'btn-danger', 'remove-time-slot', 'col-md-1');
+      removeBtn.setAttribute('type', 'button');
+      removeBtn.textContent = 'Remove';
+      
+      // Add form fields and remove button to time slot
+      newTimeSlot.appendChild(dayOfWeekGroup);
+      newTimeSlot.appendChild(startTimeGroup);
+      newTimeSlot.appendChild(endTimeGroup);
+      newTimeSlot.appendChild(removeBtn);
+      
+      // Add time slot to container
+      timeSlotsContainer.appendChild(newTimeSlot);
+    }
+
+  </script>
 </body>
 </html>

@@ -4,6 +4,13 @@
 :- use_module(library(http/http_files)).
 :- use_module(library(http/http_path)).
 :- use_module(library(http/http_server_files)).
+:- use_module(library(http/http_parameters)).
+:- use_module(library(http/http_json)).
+:- use_module(library(http/http_client)).
+:- use_module(library(http/http_error)).
+:- use_module(library(http/http_header)).
+:- use_module(library(http/http_server)).
+:- use_module(library(http/http_multipart_plugin)).
 
 % Set the location of the HTML file
 :- multifile http:location/3.
@@ -13,6 +20,7 @@ http:location(html, '/templates', []).
 
 % Define a route for serving the HTML file
 :- http_handler(root(.), main_handler, []).
+:- http_handler('/search', search_handler, [method(post)]).
 
 % Define the request handler
 main_handler(Request) :-
@@ -60,6 +68,16 @@ substitute(Template, [var(Name, Value)|Vars], Result) :-
         format('Content-type: text/plain~n~n'),
         format('An error occurred while processing the request.~n')
     ).
+
+% Define the request handler
+search_handler(Request) :-
+  http_read_json(Request, Data),
+  % process JSONIn
+  % ...
+  % return response
+
+  % Return the same data back as a response
+  reply_json(Data).
 
 % Start the server
 server(Port) :-
