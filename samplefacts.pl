@@ -1,194 +1,632 @@
-section(null, undefined, Lecture, 1, Hybrid                        ,  Mon, 14:30, 16:30, undefined).
-section(null, undefined, Lecture, 1, Hybrid                        ,  Wed, 14:30, 15:30, undefined).
-section(null, undefined, Lecture, 1, Multi-access                  ,  Tue Thu, 15:30, 17:00, undefined).
-section(null, undefined, Waiting List, 1, In-Person,  Tue Thu,  ,  , undefined).
-section(null, undefined, Lecture, 2, Multi-access                  ,  Mon Wed, 12:30, 14:00, undefined).
-section(null, undefined, Lecture, 2, Multi-access                  ,  Tue Thu, 9:30, 11:00, undefined).
-section(null, undefined, Lecture-Laboratory, 1, In-Person,  Tue, 16:00, 19:00, undefined).
-section(null, undefined, Waiting List, 1, In-Person,  Tue, 16:00, 19:00, undefined).
-section(Blocked, undefined, Seminar, 2, In-Person,  Mon, 8:30, 10:00, undefined).
-section(null, undefined, Lecture, 1, Online                        ,  ,  ,  , undefined).
-section(null, undefined, Lecture, 1, Online                        ,  ,  ,  , undefined).
-section(null, undefined, Lecture, 1, Online                        ,  ,  ,  , undefined).
-section(Blocked, undefined, Lecture, 2, Online                        ,  ,  ,  , undefined).
-section(Blocked, undefined, Lecture, 2, Online                        ,  ,  ,  , undefined).
-section(Blocked, undefined, Lecture, 2, Online                        ,  ,  ,  , undefined).
-section(Blocked, undefined, Waiting List, 2, Online                        ,  ,  ,  , undefined).
-section(null, undefined, Lecture, 1, Online                        ,  ,  ,  , undefined).
-section(null, undefined, Lecture, 1, Online                        ,  ,  ,  , undefined).
-section(null, undefined, Lecture, 1, Online                        ,  ,  ,  , undefined).
-section(Blocked, undefined, Lecture, 2, Online                        ,  ,  ,  , undefined).
-section(Blocked, undefined, Lecture, 2, Online                        ,  ,  ,  , undefined).
-section(Blocked, undefined, Lecture, 2, Online                        ,  ,  ,  , undefined).
-section(Blocked, undefined, Waiting List, 2, Online                        ,  ,  ,  , undefined).
-section(null, undefined, Lecture, 1, Online                        ,  ,  ,  , undefined).
-section(null, undefined, Lecture, 1, Online                        ,  ,  ,  , undefined).
-section(null, undefined, Lecture, 1, Online                        ,  ,  ,  , undefined).
-section(Blocked, undefined, Lecture, 2, Online                        ,  ,  ,  , undefined).
-section(Blocked, undefined, Lecture, 2, Online                        ,  ,  ,  , undefined).
-section(Blocked, undefined, Lecture, 2, Online                        ,  ,  ,  , undefined).
-section(Blocked, undefined, Waiting List, 2, Online                        ,  ,  ,  , undefined).
-section(null, undefined, Lecture, 1, Online                        ,  ,  ,  , undefined).
-section(null, undefined, Lecture, 1, Online                        ,  ,  ,  , undefined).
-section(null, undefined, Lecture, 1, Online                        ,  ,  ,  , undefined).
-section(Blocked, undefined, Lecture, 2, Online                        ,  ,  ,  , undefined).
-section(Blocked, undefined, Lecture, 2, Online                        ,  ,  ,  , undefined).
-section(Blocked, undefined, Lecture, 2, Online                        ,  ,  ,  , undefined).
-section(Blocked, undefined, Waiting List, 2, Online                        ,  ,  ,  , undefined).
-section(null, undefined, Lecture, 1, Online                        ,  ,  ,  , undefined).
-section(null, undefined, Lecture, 1, Online                        ,  ,  ,  , undefined).
-section(null, undefined, Lecture, 1, Online                        ,  ,  ,  , undefined).
-section(Blocked, undefined, Lecture, 2, Online                        ,  ,  ,  , undefined).
-section(Blocked, undefined, Lecture, 2, Online                        ,  ,  ,  , undefined).
-section(Blocked, undefined, Lecture, 2, Online                        ,  ,  ,  , undefined).
-section(Blocked, undefined, Waiting List, 2, Online                        ,  ,  ,  , undefined).
-section(null, undefined, Lecture, 1, In-Person                     ,  Tue Thu, 11:00, 12:30, undefined).
-section(null, undefined, Lecture, 1, In-Person                     ,  Tue Thu, 14:00, 15:30, undefined).
-section(null, undefined, Lecture, 2, In-Person                     ,  Tue Thu, 14:00, 15:30, undefined).
-section(null, undefined, Lecture, 2, In-Person                     ,  Mon Wed, 15:30, 17:00, undefined).
-section(null, undefined, Lecture, 1, In-Person                     ,  Mon Wed Fri, 15:00, 16:00, undefined).
-section(null, undefined, Lecture, 2, In-Person                     ,  Tue Thu, 11:00, 12:30, undefined).
-section(null, undefined, Lecture, 1, In-Person                     ,  Mon Wed Fri, 13:00, 14:00, undefined).
-section(null, undefined, Lecture, 2, In-Person                     ,  Tue Thu, 12:30, 14:00, undefined).
-section(null, undefined, Lecture, 2, Online                        ,  , , , undefined).
-section(null, undefined, Waiting List, 2, In-Person,  ,  ,  , undefined).
-section(null, undefined, Lecture, 1, In-Person,  Mon Wed, 13:00, 14:00, undefined).
-section(null, undefined, Discussion, 1, In-Person,  Mon, 9:00, 10:00, undefined).
-section(null, undefined, Discussion, 1, In-Person,  Fri, 15:00, 16:00, undefined).
-section(null, undefined, Discussion, 1, In-Person,  Fri, 13:00, 14:00, undefined).
-section(null, undefined, Discussion, 1, In-Person,  Fri, 13:00, 14:00, undefined).
-section(null, undefined, Discussion, 1, In-Person,  Fri, 15:00, 16:00, undefined).
-section(null, undefined, Discussion, 1, In-Person,  Fri, 14:00, 15:00, undefined).
-section(null, undefined, Lecture, 2, In-Person,  Mon Wed, 13:00, 14:00, undefined).
-section(null, undefined, Discussion, 2, In-Person,  Fri, 11:00, 12:00, undefined).
-section(null, undefined, Discussion, 2, In-Person,  Fri, 13:00, 14:00, undefined).
-section(null, undefined, Discussion, 2, In-Person,  Fri, 11:00, 12:00, undefined).
-section(null, undefined, Discussion, 2, In-Person,  Fri, 13:00, 14:00, undefined).
-section(Blocked, undefined, Lecture, 2, Online                        ,  , , , undefined).
-section(null, undefined, Discussion, 2, In-Person,  Fri, 14:00, 15:00, undefined).
-section(null, undefined, Discussion, 2, In-Person,  Fri, 12:00, 13:00, undefined).
-section(Full, undefined, Discussion, 2, In-Person,  Wed, 11:00, 12:00, undefined).
-section(Full, undefined, Discussion, 2, In-Person,  Wed, 14:00, 15:00, undefined).
-section(null, undefined, Discussion, 2, In-Person,  Mon, 15:00, 16:00, undefined).
-section(null, undefined, Discussion, 2, In-Person,  Mon, 9:00, 10:00, undefined).
-section(null, undefined, Waiting List, 1, In-Person,  Mon Wed, 13:00, 14:00, undefined).
-section(null, undefined, Waiting List, 2, In-Person,  Mon Wed, 13:00, 14:00, undefined).
-section(null, undefined, Waiting List, 2, In-Person,  Mon, 8:00, 8:30, undefined).
-section(null, undefined, Lecture, 1, In-Person,  Mon Wed, 12:00, 13:00, undefined).
-section(null, undefined, Discussion, 1, In-Person,  Fri, 12:00, 13:00, undefined).
-section(null, undefined, Waiting List, 1, In-Person,  Mon Wed, 12:00, 13:00, undefined).
-section(null, undefined, Lecture, 1, In-Person,  Mon Wed Fri, 12:00, 13:00, undefined).
-section(null, undefined, Lecture, 2, In-Person,  Mon Wed Fri, 10:00, 11:00, undefined).
-section(null, undefined, Lecture, 1, In-Person,  Tue Thu, 14:00, 15:30, undefined).
-section(null, undefined, Waiting List, 1, In-Person,  Tue Thu, 14:00, 15:30, undefined).
-section(null, undefined, Lecture, 1, In-Person,  Mon Wed Fri, 14:00, 15:00, undefined).
-section(null, undefined, Lecture, 1, In-Person,  Mon Wed Fri, 11:00, 12:00, undefined).
-section(null, undefined, Lecture, 1, In-Person,  Mon Wed Fri, 12:00, 13:00, undefined).
-section(null, undefined, Waiting List, 1, In-Person,  Mon, 8:00, 9:00, undefined).
-section(null, undefined, Lecture, 1, In-Person,  Mon Wed Fri, 13:00, 14:00, undefined).
-section(Cancelled, undefined, Lecture, 2, In-Person,  , , , undefined).
-section(null, undefined, Lecture, 1, In-Person,  Mon Wed Fri, 10:00, 11:00, undefined).
-section(Cancelled, undefined, Lecture, 2, In-Person,  , , , undefined).
-section(null, undefined, Lecture, 2, In-Person,  Mon Wed Fri, 12:00, 13:00, undefined).
-section(null, undefined, Lecture, 2, In-Person,  Tue Thu, 11:00, 12:30, undefined).
-section(Cancelled, undefined, Lecture, 2, In-Person,  , , , undefined).
-section(null, undefined, Lecture, 2, In-Person,  Mon Wed Fri, 9:00, 10:00, undefined).
-section(Cancelled, undefined, Waiting List, 2, In-Person,  , , , undefined).
-section(null, undefined, Lecture, 1, In-Person,  Mon Wed, 17:00, 18:00, undefined).
-section(null, undefined, Tutorial, 1, In-Person,  Fri, 11:00, 12:00, undefined).
-section(null, undefined, Tutorial, 1, In-Person,  Mon, 18:00, 19:00, undefined).
-section(null, undefined, Lecture, 2, In-Person,  Mon Wed, 17:00, 18:00, undefined).
-section(Blocked, undefined, Tutorial, 2, In-Person,  Mon, 11:00, 12:00, undefined).
-section(Blocked, undefined, Tutorial, 2, In-Person,  Wed, 10:00, 11:00, undefined).
-section(null, undefined, Tutorial, 2, In-Person,  Mon, 18:00, 19:00, undefined).
-section(Blocked, undefined, Tutorial, 2, In-Person,  Mon, 13:00, 14:00, undefined).
-section(Blocked, undefined, Tutorial, 2, In-Person,  Fri, 12:00, 13:00, undefined).
-section(null, undefined, Lecture, 1, Online                        ,  , , , undefined).
-section(null, undefined, Lecture, 2, Online                        ,  , , , undefined).
-section(null, undefined, Tutorial, 2, In-Person,  Mon, 16:00, 17:00, undefined).
-section(null, undefined, Waiting List, 1, In-Person,  Mon, 8:00, 9:00, undefined).
-section(null, undefined, Waiting List, 2, In-Person,  Mon, 8:00, 9:00, undefined).
-section(null, undefined, Lecture, 2, In-Person,  Mon Wed Fri, 11:00, 12:00, undefined).
-section(null, undefined, Lecture, 2, In-Person,  Tue Thu, 11:00, 12:30, undefined).
-section(null, undefined, Waiting List, 2, In-Person,  Tue Thu, 11:00, 12:30, undefined).
-section(Cancelled, undefined, Lecture, 1, In-Person,  , , , undefined).
-section(null, undefined, Lecture, 2, In-Person,  Mon Wed Fri, 16:00, 17:00, undefined).
-section(null, undefined, Lecture, 1, In-Person,  Mon Wed Fri, 13:00, 14:00, undefined).
-section(null, undefined, Lecture, 2, In-Person,  Tue Thu, 14:00, 15:30, undefined).
-section(null, undefined, Lecture, 1, In-Person,  Mon Wed Fri, 9:00, 10:00, undefined).
-section(null, undefined, Lecture, 1, In-Person,  Tue Thu, 9:30, 11:00, undefined).
-section(null, undefined, Waiting List, 1, In-Person,  Tue Thu, 9:30, 11:00, undefined).
-section(null, undefined, Lecture, 2, In-Person,  Mon Wed Fri, 11:00, 12:00, undefined).
-section(null, undefined, Lecture, 2, In-Person,  Mon Wed Fri, 13:00, 14:00, undefined).
-section(null, undefined, Seminar, 2, In-Person,  Mon Wed Fri, 11:00, 12:00, undefined).
-section(null, undefined, Lecture, 1, In-Person,  Mon Wed Fri, 12:00, 13:00, undefined).
-section(null, undefined, Lecture, 2, In-Person,  Tue Thu, 9:30, 11:00, undefined).
-section(null, undefined, Lecture, 1, In-Person,  Mon Wed Fri, 10:00, 11:00, undefined).
-section(null, undefined, Waiting List, 1, In-Person,  Mon Wed Fri, 10:00, 11:00, undefined).
-section(null, undefined, Lecture, 2, In-Person,  Mon Wed Fri, 14:00, 15:00, undefined).
-section(Blocked, undefined, Lecture, 1, In-Person,  Tue Thu, 11:00, 12:30, undefined).
-section(Cancelled, undefined, Lecture, 2, In-Person,  , , , undefined).
-section(null, undefined, Lecture, 2, In-Person,  Tue Thu, 12:30, 14:00, undefined).
-section(Cancelled, undefined, Lecture, 1, In-Person,  , , , undefined).
-section(null, undefined, Seminar, 2, In-Person,  Mon Wed Fri, 12:00, 13:00, undefined).
-section(null, undefined, Seminar, 2, In-Person,  Thu, 14:00, 17:00, undefined).
-section(null, undefined, Seminar, 1, In-Person,  Tue, 13:00, 16:00, undefined).
-section(null, undefined, Seminar, 1, In-Person,  Mon Wed Fri, 9:00, 10:00, undefined).
-section(null, undefined, Seminar, 1, In-Person,  Mon Fri, 17:00, 18:30, undefined).
-section(Full, undefined, Seminar, 2, In-Person,  Tue, 14:30, 17:30, undefined).
-section(Blocked, undefined, Directed Studies, 1-2, In-Person,  Mon, 8:00, 9:00, undefined).
-section(Restricted, undefined, Lecture-Laboratory, 1, In-Person,  Tue Thu, 8:00, 9:30, undefined).
-section(Blocked, undefined, Directed Studies, 2, In-Person,  ,  ,  , undefined).
-section(Blocked, undefined, Directed Studies, 1-2, In-Person,  , , , undefined).
-section(Blocked, undefined, Directed Studies, 1-2, In-Person,  ,  ,  , undefined).
-section(null, undefined, Lecture, 2, Online                        ,  Mon Wed, 9:00, 10:00, undefined).
-section(null, undefined, Discussion, 2, Online                        ,  Fri, 10:00, 11:00, undefined).
-section(Full, undefined, Discussion, 2, Online                        ,  Fri, 11:00, 12:00, undefined).
-section(null, undefined, Discussion, 2, Online                        ,  Fri, 12:00, 13:00, undefined).
-section(null, undefined, Discussion, 2, Online                        ,  Fri, 13:00, 14:00, undefined).
-section(null, undefined, Discussion, 2, Online                        ,  Fri, 14:00, 15:00, undefined).
-section(null, undefined, Discussion, 2, Online                        ,  Fri, 15:00, 16:00, undefined).
-section(STT, undefined, Lecture, 1, In-Person,  Tue Thu, 11:00, 12:00, undefined).
-section(null, undefined, Discussion, 1, In-Person,  Thu, 14:00, 15:00, undefined).
-section(Full, undefined, Discussion, 1, In-Person,  Thu, 18:00, 19:00, undefined).
-section(null, undefined, Discussion, 1, In-Person,  Fri, 9:00, 10:00, undefined).
-section(null, undefined, Discussion, 1, In-Person,  Fri, 9:00, 10:00, undefined).
-section(null, undefined, Lecture, 1, In-Person,  Mon Wed, 16:00, 17:00, undefined).
-section(null, undefined, Discussion, 1, In-Person,  Fri, 9:00, 10:00, undefined).
-section(null, undefined, Discussion, 1, In-Person,  Fri, 10:00, 11:00, undefined).
-section(null, undefined, Discussion, 1, In-Person,  Fri, 11:00, 12:00, undefined).
-section(null, undefined, Discussion, 1, In-Person,  Fri, 12:00, 13:00, undefined).
-section(null, undefined, Discussion, 1, In-Person,  Fri, 13:00, 14:00, undefined).
-section(null, undefined, Discussion, 1, In-Person,  Fri, 15:00, 16:00, undefined).
-section(null, undefined, Discussion, 1, In-Person,  Fri, 9:00, 10:00, undefined).
-section(null, undefined, Discussion, 1, In-Person,  Fri, 10:00, 11:00, undefined).
-section(null, undefined, Discussion, 1, In-Person,  Fri, 11:00, 12:00, undefined).
-section(null, undefined, Discussion, 1, In-Person,  Fri, 12:00, 13:00, undefined).
-section(null, undefined, Discussion, 1, In-Person,  Fri, 13:00, 14:00, undefined).
-section(null, undefined, Discussion, 1, In-Person,  Fri, 14:00, 15:00, undefined).
-section(null, undefined, Discussion, 1, In-Person,  Fri, 15:00, 16:00, undefined).
-section(Blocked, undefined, Discussion, 1, In-Person,  Fri, 9:00, 10:00, undefined).
-section(null, undefined, Discussion, 1, In-Person,  Fri, 10:00, 11:00, undefined).
-section(null, undefined, Lecture, 2, In-Person,  Mon Wed, 11:00, 12:00, undefined).
-section(null, undefined, Discussion, 2, In-Person,  Fri, 15:00, 16:00, undefined).
-section(null, undefined, Discussion, 2, In-Person,  Fri, 10:00, 11:00, undefined).
-section(Full, undefined, Discussion, 2, In-Person,  Fri, 11:00, 12:00, undefined).
-section(null, undefined, Discussion, 2, In-Person,  Fri, 12:00, 13:00, undefined).
-section(null, undefined, Discussion, 2, In-Person,  Fri, 13:00, 14:00, undefined).
-section(null, undefined, Discussion, 2, In-Person,  Fri, 14:00, 15:00, undefined).
-section(null, undefined, Lecture, 2, In-Person,  Mon Wed, 14:00, 15:00, undefined).
-section(null, undefined, Discussion, 2, In-Person,  Fri, 9:00, 10:00, undefined).
-section(null, undefined, Discussion, 2, In-Person,  Fri, 10:00, 11:00, undefined).
-section(null, undefined, Discussion, 2, In-Person,  Fri, 11:00, 12:00, undefined).
-section(null, undefined, Discussion, 2, In-Person,  Fri, 12:00, 13:00, undefined).
-section(null, undefined, Discussion, 2, In-Person,  Fri, 13:00, 14:00, undefined).
-section(null, undefined, Discussion, 2, In-Person,  Fri, 15:00, 16:00, undefined).
-section(null, undefined, Lecture, 1, In-Person,  Mon Wed, 9:30, 11:00, undefined).
-section(null, undefined, Lecture, 1, In-Person,  Tue Thu, 11:00, 12:30, undefined).
-section(null, undefined, Lecture, 2, In-Person,  Tue Thu, 9:30, 11:00, undefined).
-section(null, undefined, Lecture, 1, Online                        ,  Tue Thu, 14:00, 15:30, undefined).
-section(null, undefined, Lecture, 1, In-Person,  Tue Thu, 12:30, 14:00, undefined).
-section(null, undefined, Lecture, 2, In-Person,  Tue Thu, 11:00, 12:30, undefined).
-section(null, undefined, Lecture, 1, In-Person,  Tue Thu, 15:30, 17:00, undefined).
-section(null, undefined, Lecture, 1, Online                        ,  Mon Wed, 11:00, 12:30, undefined).
-section(null, undefined, Lecture, 2, In-Person,  Mon Wed, 9:30, 11:00, undefined).
+section(cpsc, 100, 101, restricted, lecture,      1, inperson, days(mon, wed, fri), time(15, 00), time(16, 00), yes).
+section(cpsc, 100, l1b, full,       laboratory,   1, inperson, days(wed),           time(12, 00), time(13, 00), yes).
+section(cpsc, 100, l1c, null,       laboratory,   1, inperson, days(tue),           time(17, 30), time(18, 30), yes).
+section(cpsc, 100, l1e, null,       laboratory,   1, inperson, days(wed),           time(16, 00), time(17, 00), yes).
+section(cpsc, 100, l1h, null,       laboratory,   1, inperson, days(wed),           time(14, 00), time(15, 00), yes).
+section(cpsc, 100, l1k, null,       laboratory,   1, inperson, days(wed),           time(10, 00), time(11, 00), yes).
+section(cpsc, 100, l1m, null,       laboratory,   1, inperson, days(thu),           time(14, 00), time(15, 00), yes).
+section(cpsc, 100, 1w1, blocked,    waitinglist,  1, inperson, days(mon, wed, fri), time(15, 00), time(16, 00), yes).
+section(cpsc, 100, 201, blocked,    lecture,      2, inperson, days(tue, thu),      time(15, 30), time(17, 00), yes).
+section(cpsc, 100, l2a, null,       laboratory,   2, inperson, days(wed),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 100, l2b, null,       laboratory,   2, inperson, days(wed),           time(10, 00), time(11, 00), yes).
+section(cpsc, 100, l2c, null,       laboratory,   2, inperson, days(wed),           time(11, 00), time(12, 00), yes).
+section(cpsc, 100, l2d, null,       laboratory,   2, inperson, days(wed),           time(12, 00), time(13, 00), yes).
+section(cpsc, 100, l2e, null,       laboratory,   2, inperson, days(wed),           time(15, 00), time(16, 00), yes).
+section(cpsc, 100, l2f, full,       laboratory,   2, inperson, days(wed),           time(16, 00), time(17, 00), yes).
+section(cpsc, 100, l2g, null,       laboratory,   2, inperson, days(wed),           time(17, 00), time(18, 00), yes).
+section(cpsc, 100, l2h, blocked,    laboratory,   2, inperson, days(thu),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 100, 2w1, blocked,    waitinglist,  2, inperson, days(tue, thu),      time(15, 30), time(17, 00), yes).
+section(cpsc, 103, 101, restricted, lecture,      1, inperson, days(tue, thu),      time(9, 30),  time(11, 00), yes).
+section(cpsc, 103, t1a, null,       tutorial,     1, inperson, days(fri),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 103, t1b, null,       tutorial,     1, inperson, days(fri),           time(10, 00), time(11, 00), yes).
+section(cpsc, 103, t1c, null,       tutorial,     1, inperson, days(fri),           time(11, 00), time(12, 00), yes).
+section(cpsc, 103, t1d, null,       tutorial,     1, inperson, days(fri),           time(12, 00), time(13, 00), yes).
+section(cpsc, 103, t1e, null,       tutorial,     1, inperson, days(fri),           time(15, 00), time(16, 00), yes).
+section(cpsc, 103, t1f, null,       tutorial,     1, inperson, days(fri),           time(13, 00), time(14, 00), yes).
+section(cpsc, 103, t1g, null,       tutorial,     1, inperson, days(thu),           time(11, 00), time(12, 00), yes).
+section(cpsc, 103, t1h, null,       tutorial,     1, inperson, days(thu),           time(8, 30),  time(9, 30),  yes).
+section(cpsc, 103, t1i, null,       tutorial,     1, inperson, days(thu),           time(16, 00), time(17, 00), yes).
+section(cpsc, 103, t1j, null,       tutorial,     1, inperson, days(thu),           time(18, 00), time(19, 00), yes).
+section(cpsc, 103, t1k, null,       tutorial,     1, inperson, days(thu),           time(12, 00), time(13, 00), yes).
+section(cpsc, 103, t1l, null,       tutorial,     1, inperson, days(fri),           time(16, 00), time(17, 00), yes).
+section(cpsc, 103, t1m, null,       tutorial,     1, inperson, days(thu),           time(13, 00), time(14, 00), yes).
+section(cpsc, 103, t1n, blocked,    tutorial,     1, inperson, days(fri),           time(16, 00), time(17, 00), yes).
+section(cpsc, 103, t1o, null,       tutorial,     1, inperson, days(thu),           time(11, 00), time(12, 00), yes).
+section(cpsc, 103, t1p, null,       tutorial,     1, inperson, days(thu),           time(17, 00), time(18, 00), yes).
+section(cpsc, 103, t1r, null,       tutorial,     1, inperson, days(fri),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 103, t1s, null,       tutorial,     1, inperson, days(fri),           time(10, 00), time(11, 00), yes).
+section(cpsc, 103, t1t, null,       tutorial,     1, inperson, days(wed),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 103, t1u, null,       tutorial,     1, inperson, days(fri),           time(14, 00), time(15, 00), yes).
+section(cpsc, 103, t1v, null,       tutorial,     1, inperson, days(fri),           time(15, 00), time(16, 00), yes).
+section(cpsc, 103, 102, full,       lecture,      1, inperson, days(tue, thu),      time(14, 00), time(15, 30), yes).
+section(cpsc, 103, t1a, null,       tutorial,     1, inperson, days(fri),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 103, t1b, null,       tutorial,     1, inperson, days(fri),           time(10, 00), time(11, 00), yes).
+section(cpsc, 103, t1c, null,       tutorial,     1, inperson, days(fri),           time(11, 00), time(12, 00), yes).
+section(cpsc, 103, t1d, null,       tutorial,     1, inperson, days(fri),           time(12, 00), time(13, 00), yes).
+section(cpsc, 103, t1e, null,       tutorial,     1, inperson, days(fri),           time(15, 00), time(16, 00), yes).
+section(cpsc, 103, t1f, null,       tutorial,     1, inperson, days(fri),           time(13, 00), time(14, 00), yes).
+section(cpsc, 103, t1g, null,       tutorial,     1, inperson, days(thu),           time(11, 00), time(12, 00), yes).
+section(cpsc, 103, t1h, null,       tutorial,     1, inperson, days(thu),           time(8, 30),  time(9, 30),  yes).
+section(cpsc, 103, t1i, null,       tutorial,     1, inperson, days(thu),           time(16, 00), time(17, 00), yes).
+section(cpsc, 103, t1j, null,       tutorial,     1, inperson, days(thu),           time(18, 00), time(19, 00), yes).
+section(cpsc, 103, t1k, null,       tutorial,     1, inperson, days(thu),           time(12, 00), time(13, 00), yes).
+section(cpsc, 103, t1l, null,       tutorial,     1, inperson, days(fri),           time(16, 00), time(17, 00), yes).
+section(cpsc, 103, t1m, null,       tutorial,     1, inperson, days(thu),           time(13, 00), time(14, 00), yes).
+section(cpsc, 103, t1n, blocked,    tutorial,     1, inperson, days(fri),           time(16, 00), time(17, 00), yes).
+section(cpsc, 103, t1o, null,       tutorial,     1, inperson, days(thu),           time(11, 00), time(12, 00), yes).
+section(cpsc, 103, t1p, null,       tutorial,     1, inperson, days(thu),           time(17, 00), time(18, 00), yes).
+section(cpsc, 103, t1r, null,       tutorial,     1, inperson, days(fri),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 103, t1s, null,       tutorial,     1, inperson, days(fri),           time(10, 00), time(11, 00), yes).
+section(cpsc, 103, t1t, null,       tutorial,     1, inperson, days(wed),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 103, t1u, null,       tutorial,     1, inperson, days(fri),           time(14, 00), time(15, 00), yes).
+section(cpsc, 103, t1v, null,       tutorial,     1, inperson, days(fri),           time(15, 00), time(16, 00), yes).
+section(cpsc, 103, 1w1, blocked,    waitinglist,  1, inperson, days(tue, thu),      time(9, 30),  time(11, 00), yes).
+section(cpsc, 103, 1w2, blocked,    waitinglist,  1, inperson, days(tue, thu),      time(14, 00), time(15, 30), yes).
+section(cpsc, 103, 201, blocked,    lecture,      2, inperson, days(tue, thu),      time(11, 00), time(12, 30), yes).
+section(cpsc, 103, t2a, null,       tutorial,     2, inperson, days(fri),           time(10, 00), time(11, 00), yes).
+section(cpsc, 103, t2b, null,       tutorial,     2, inperson, days(fri),           time(11, 00), time(12, 00), yes).
+section(cpsc, 103, t2c, null,       tutorial,     2, inperson, days(fri),           time(14, 00), time(15, 00), yes).
+section(cpsc, 103, t2d, null,       tutorial,     2, inperson, days(fri),           time(15, 00), time(16, 00), yes).
+section(cpsc, 103, t2e, null,       tutorial,     2, inperson, days(fri),           time(16, 00), time(17, 00), yes).
+section(cpsc, 103, t2f, null,       tutorial,     2, inperson, days(thu),           time(14, 00), time(15, 00), yes).
+section(cpsc, 103, t2g, null,       tutorial,     2, inperson, days(thu),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 103, t2h, null,       tutorial,     2, inperson, days(thu),           time(10, 00), time(11, 00), yes).
+section(cpsc, 103, t2j, null,       tutorial,     2, inperson, days(fri),           time(12, 00), time(13, 00), yes).
+section(cpsc, 103, t2k, null,       tutorial,     2, inperson, days(fri),           time(13, 00), time(14, 00), yes).
+section(cpsc, 103, t2l, null,       tutorial,     2, inperson, days(fri),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 103, t2m, null,       tutorial,     2, inperson, days(thu),           time(13, 00), time(14, 00), yes).
+section(cpsc, 103, t2n, null,       tutorial,     2, inperson, days(fri),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 103, t2p, null,       tutorial,     2, inperson, days(fri),           time(11, 00), time(12, 00), yes).
+section(cpsc, 103, t2r, null,       tutorial,     2, inperson, days(fri),           time(12, 00), time(13, 00), yes).
+section(cpsc, 103, t2s, null,       tutorial,     2, inperson, days(fri),           time(14, 00), time(15, 00), yes).
+section(cpsc, 103, t2t, null,       tutorial,     2, inperson, days(thu),           time(18, 00), time(19, 00), yes).
+section(cpsc, 103, t2u, null,       tutorial,     2, inperson, days(fri),           time(15, 00), time(16, 00), yes).
+section(cpsc, 103, t2x, full,       tutorial,     2, inperson, days(thu),           time(17, 00), time(18, 00), yes).
+section(cpsc, 103, 202, blocked,    lecture,      2, inperson, days(tue, thu),      time(15, 30), time(17, 00), yes).
+section(cpsc, 103, t2a, null,       tutorial,     2, inperson, days(fri),           time(10, 00), time(11, 00), yes).
+section(cpsc, 103, t2b, null,       tutorial,     2, inperson, days(fri),           time(11, 00), time(12, 00), yes).
+section(cpsc, 103, t2c, null,       tutorial,     2, inperson, days(fri),           time(14, 00), time(15, 00), yes).
+section(cpsc, 103, t2d, null,       tutorial,     2, inperson, days(fri),           time(15, 00), time(16, 00), yes).
+section(cpsc, 103, t2e, null,       tutorial,     2, inperson, days(fri),           time(16, 00), time(17, 00), yes).
+section(cpsc, 103, t2f, null,       tutorial,     2, inperson, days(thu),           time(14, 00), time(15, 00), yes).
+section(cpsc, 103, t2g, null,       tutorial,     2, inperson, days(thu),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 103, t2h, null,       tutorial,     2, inperson, days(thu),           time(10, 00), time(11, 00), yes).
+section(cpsc, 103, t2j, null,       tutorial,     2, inperson, days(fri),           time(12, 00), time(13, 00), yes).
+section(cpsc, 103, t2k, null,       tutorial,     2, inperson, days(fri),           time(13, 00), time(14, 00), yes).
+section(cpsc, 103, t2l, null,       tutorial,     2, inperson, days(fri),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 103, t2m, null,       tutorial,     2, inperson, days(thu),           time(13, 00), time(14, 00), yes).
+section(cpsc, 103, t2n, null,       tutorial,     2, inperson, days(fri),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 103, t2p, null,       tutorial,     2, inperson, days(fri),           time(11, 00), time(12, 00), yes).
+section(cpsc, 103, t2r, null,       tutorial,     2, inperson, days(fri),           time(12, 00), time(13, 00), yes).
+section(cpsc, 103, t2s, null,       tutorial,     2, inperson, days(fri),           time(14, 00), time(15, 00), yes).
+section(cpsc, 103, t2t, null,       tutorial,     2, inperson, days(thu),           time(18, 00), time(19, 00), yes).
+section(cpsc, 103, t2u, null,       tutorial,     2, inperson, days(fri),           time(15, 00), time(16, 00), yes).
+section(cpsc, 103, t2x, full,       tutorial,     2, inperson, days(thu),           time(17, 00), time(18, 00), yes).
+section(cpsc, 103, 2w1, blocked,    waitinglist,  2, inperson, days(tue, thu),      time(11, 00), time(12, 30), yes).
+section(cpsc, 103, 2w2, blocked,    waitinglist,  2, inperson, days(tue, thu),      time(15, 30), time(17, 00), yes).
+section(cpsc, 107, 201, blocked,    lecture,      2, inperson, days(mon, wed, fri), time(11, 00), time(12, 00), yes).
+section(cpsc, 107, l2a, null,       laboratory,   2, inperson, days(mon),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 107, l2b, null,       laboratory,   2, inperson, days(tue),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 107, l2c, null,       laboratory,   2, inperson, days(mon),           time(13, 00), time(15, 00), yes).
+section(cpsc, 107, l2d, full,       laboratory,   2, inperson, days(mon),           time(15, 00), time(17, 00), yes).
+section(cpsc, 107, l2f, null,       laboratory,   2, inperson, days(tue),           time(17, 00), time(19, 00), yes).
+section(cpsc, 107, l2g, null,       laboratory,   2, inperson, days(tue),           time(15, 00), time(17, 00), yes).
+section(cpsc, 107, 2w1, blocked,    waitinglist,  2, inperson, days(mon, wed, fri), time(11, 00), time(12, 00), yes).
+section(cpsc, 110, 101, full,       lecture,      1, hybrid,   days(tue, thu),      time(11, 00), time(12, 30), yes).
+section(cpsc, 110, l10, null,       laboratory,   1, inperson, days(wed),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, l11, null,       laboratory,   1, inperson, days(wed),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, l12, null,       laboratory,   1, inperson, days(mon),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l13, null,       laboratory,   1, inperson, days(tue),           time(9, 30),  time(12, 30), yes).
+section(cpsc, 110, l14, null,       laboratory,   1, inperson, days(wed),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l15, null,       laboratory,   1, inperson, days(thu),           time(9, 30),  time(12, 30), yes).
+section(cpsc, 110, l16, null,       laboratory,   1, inperson, days(fri),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l17, null,       laboratory,   1, online,   days(fri),           time(15, 00), time(18, 00), yes).
+section(cpsc, 110, l18, null,       laboratory,   1, inperson, days(mon),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, l19, null,       laboratory,   1, inperson, days(fri),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l1a, null,       laboratory,   1, inperson, days(mon),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l1b, null,       laboratory,   1, inperson, days(mon),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l1c, null,       laboratory,   1, online,   days(mon),           time(15, 00), time(18, 00), yes).
+section(cpsc, 110, l1d, null,       laboratory,   1, inperson, days(tue),           time(9, 30),  time(12, 30), yes).
+section(cpsc, 110, l1e, null,       laboratory,   1, inperson, days(tue),           time(12, 30), time(15, 30), yes).
+section(cpsc, 110, l1f, null,       laboratory,   1, inperson, days(tue),           time(15, 30), time(18, 30), yes).
+section(cpsc, 110, l1g, null,       laboratory,   1, inperson, days(wed),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l1h, null,       laboratory,   1, inperson, days(wed),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l1i, null,       laboratory,   1, inperson, days(fri),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, l1j, null,       laboratory,   1, inperson, days(wed),           time(15, 00), time(18, 00), yes).
+section(cpsc, 110, l1k, full,       laboratory,   1, inperson, days(thu),           time(9, 30),  time(12, 30), yes).
+section(cpsc, 110, l1l, null,       laboratory,   1, inperson, days(thu),           time(15, 30), time(18, 30), yes).
+section(cpsc, 110, l1m, null,       laboratory,   1, inperson, days(thu),           time(12, 30), time(15, 30), yes).
+section(cpsc, 110, l1n, restricted, laboratory,   1, inperson, days(fri),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l1p, restricted, laboratory,   1, inperson, days(fri),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l1q, null,       laboratory,   1, inperson, days(fri),           time(15, 00), time(18, 00), yes).
+section(cpsc, 110, l1r, null,       laboratory,   1, inperson, days(mon),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l1s, null,       laboratory,   1, inperson, days(tue),           time(12, 30), time(15, 30), yes).
+section(cpsc, 110, l1t, null,       laboratory,   1, inperson, days(tue),           time(15, 30), time(18, 30), yes).
+section(cpsc, 110, l1u, null,       laboratory,   1, inperson, days(wed),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l1v, null,       laboratory,   1, inperson, days(thu),           time(12, 30), time(15, 30), yes).
+section(cpsc, 110, l1w, stt,        laboratory,   1, online,   days(mon),           time(15, 00), time(18, 00), yes).
+section(cpsc, 110, l1x, stt,        laboratory,   1, online,   days(wed),           time(15, 00), time(18, 00), yes).
+section(cpsc, 110, l1y, null,       laboratory,   1, inperson, days(mon),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, l1z, null,       laboratory,   1, inperson, days(thu),           time(15, 30), time(18, 30), yes).
+section(cpsc, 110, laa, null,       laboratory,   1, inperson, days(fri),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, lac, null,       laboratory,   1, inperson, days(wed),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, lad, null,       laboratory,   1, inperson, days(tue),           time(15, 30), time(18, 30), yes).
+section(cpsc, 110, lae, null,       laboratory,   1, inperson, days(thu),           time(9, 30),  time(12, 30), yes).
+section(cpsc, 110, v2a, restricted, laboratory,   2, inperson, days(mon),           time(15, 00), time(18, 00), yes).
+section(cpsc, 110, 102, full,       lecture,      1, hybrid,   days(tue, thu),      time(14, 00), time(15, 30), yes).
+section(cpsc, 110, l10, null,       laboratory,   1, inperson, days(wed),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, l11, null,       laboratory,   1, inperson, days(wed),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, l12, null,       laboratory,   1, inperson, days(mon),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l13, null,       laboratory,   1, inperson, days(tue),           time(9, 30),  time(12, 30), yes).
+section(cpsc, 110, l14, null,       laboratory,   1, inperson, days(wed),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l15, null,       laboratory,   1, inperson, days(thu),           time(9, 30),  time(12, 30), yes).
+section(cpsc, 110, l16, null,       laboratory,   1, inperson, days(fri),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l17, null,       laboratory,   1, online,   days(fri),           time(15, 00), time(18, 00), yes).
+section(cpsc, 110, l18, null,       laboratory,   1, inperson, days(mon),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, l19, null,       laboratory,   1, inperson, days(fri),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l1a, null,       laboratory,   1, inperson, days(mon),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l1b, null,       laboratory,   1, inperson, days(mon),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l1c, null,       laboratory,   1, online,   days(mon),           time(15, 00), time(18, 00), yes).
+section(cpsc, 110, l1d, null,       laboratory,   1, inperson, days(tue),           time(9, 30),  time(12, 30), yes).
+section(cpsc, 110, l1e, null,       laboratory,   1, inperson, days(tue),           time(12, 30), time(15, 30), yes).
+section(cpsc, 110, l1f, null,       laboratory,   1, inperson, days(tue),           time(15, 30), time(18, 30), yes).
+section(cpsc, 110, l1g, null,       laboratory,   1, inperson, days(wed),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l1h, null,       laboratory,   1, inperson, days(wed),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l1i, null,       laboratory,   1, inperson, days(fri),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, l1j, null,       laboratory,   1, inperson, days(wed),           time(15, 00), time(18, 00), yes).
+section(cpsc, 110, l1k, full,       laboratory,   1, inperson, days(thu),           time(9, 30),  time(12, 30), yes).
+section(cpsc, 110, l1l, null,       laboratory,   1, inperson, days(thu),           time(15, 30), time(18, 30), yes).
+section(cpsc, 110, l1m, null,       laboratory,   1, inperson, days(thu),           time(12, 30), time(15, 30), yes).
+section(cpsc, 110, l1n, restricted, laboratory,   1, inperson, days(fri),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l1p, restricted, laboratory,   1, inperson, days(fri),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l1q, null,       laboratory,   1, inperson, days(fri),           time(15, 00), time(18, 00), yes).
+section(cpsc, 110, l1r, null,       laboratory,   1, inperson, days(mon),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l1s, null,       laboratory,   1, inperson, days(tue),           time(12, 30), time(15, 30), yes).
+section(cpsc, 110, l1t, null,       laboratory,   1, inperson, days(tue),           time(15, 30), time(18, 30), yes).
+section(cpsc, 110, l1u, null,       laboratory,   1, inperson, days(wed),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l1v, null,       laboratory,   1, inperson, days(thu),           time(12, 30), time(15, 30), yes).
+section(cpsc, 110, l1w, stt,        laboratory,   1, online,   days(mon),           time(15, 00), time(18, 00), yes).
+section(cpsc, 110, l1x, stt,        laboratory,   1, online,   days(wed),           time(15, 00), time(18, 00), yes).
+section(cpsc, 110, l1y, null,       laboratory,   1, inperson, days(mon),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, l1z, null,       laboratory,   1, inperson, days(thu),           time(15, 30), time(18, 30), yes).
+section(cpsc, 110, laa, null,       laboratory,   1, inperson, days(fri),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, lac, null,       laboratory,   1, inperson, days(wed),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, lad, null,       laboratory,   1, inperson, days(tue),           time(15, 30), time(18, 30), yes).
+section(cpsc, 110, lae, null,       laboratory,   1, inperson, days(thu),           time(9, 30),  time(12, 30), yes).
+section(cpsc, 110, 103, restricted, lecture,      1, hybrid,   days(mon, wed),      time(9, 30),  time(11, 00), yes).
+section(cpsc, 110, l10, null,       laboratory,   1, inperson, days(wed),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, l11, null,       laboratory,   1, inperson, days(wed),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, l12, null,       laboratory,   1, inperson, days(mon),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l13, null,       laboratory,   1, inperson, days(tue),           time(9, 30),  time(12, 30), yes).
+section(cpsc, 110, l14, null,       laboratory,   1, inperson, days(wed),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l15, null,       laboratory,   1, inperson, days(thu),           time(9, 30),  time(12, 30), yes).
+section(cpsc, 110, l16, null,       laboratory,   1, inperson, days(fri),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l18, null,       laboratory,   1, inperson, days(mon),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, l19, null,       laboratory,   1, inperson, days(fri),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l1a, null,       laboratory,   1, inperson, days(mon),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l1b, null,       laboratory,   1, inperson, days(mon),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l1d, null,       laboratory,   1, inperson, days(tue),           time(9, 30),  time(12, 30), yes).
+section(cpsc, 110, l1e, null,       laboratory,   1, inperson, days(tue),           time(12, 30), time(15, 30), yes).
+section(cpsc, 110, l1f, null,       laboratory,   1, inperson, days(tue),           time(15, 30), time(18, 30), yes).
+section(cpsc, 110, l1g, null,       laboratory,   1, inperson, days(wed),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l1h, null,       laboratory,   1, inperson, days(wed),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l1i, null,       laboratory,   1, inperson, days(fri),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, l1k, full,       laboratory,   1, inperson, days(thu),           time(9, 30),  time(12, 30), yes).
+section(cpsc, 110, l1l, null,       laboratory,   1, inperson, days(thu),           time(15, 30), time(18, 30), yes).
+section(cpsc, 110, l1m, null,       laboratory,   1, inperson, days(thu),           time(12, 30), time(15, 30), yes).
+section(cpsc, 110, l1n, restricted, laboratory,   1, inperson, days(fri),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l1p, restricted, laboratory,   1, inperson, days(fri),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l1q, null,       laboratory,   1, inperson, days(fri),           time(15, 00), time(18, 00), yes).
+section(cpsc, 110, l1r, null,       laboratory,   1, inperson, days(mon),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l1s, null,       laboratory,   1, inperson, days(tue),           time(12, 30), time(15, 30), yes).
+section(cpsc, 110, l1t, null,       laboratory,   1, inperson, days(tue),           time(15, 30), time(18, 30), yes).
+section(cpsc, 110, l1u, null,       laboratory,   1, inperson, days(wed),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l1v, null,       laboratory,   1, inperson, days(thu),           time(12, 30), time(15, 30), yes).
+section(cpsc, 110, l1y, null,       laboratory,   1, inperson, days(mon),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, l1z, null,       laboratory,   1, inperson, days(thu),           time(15, 30), time(18, 30), yes).
+section(cpsc, 110, laa, null,       laboratory,   1, inperson, days(fri),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, lac, null,       laboratory,   1, inperson, days(wed),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, lad, null,       laboratory,   1, inperson, days(tue),           time(15, 30), time(18, 30), yes).
+section(cpsc, 110, lae, null,       laboratory,   1, inperson, days(thu),           time(9, 30),  time(12, 30), yes).
+section(cpsc, 110, 104, full,       lecture,      1, hybrid,   days(mon, wed),      time(12, 30), time(14, 00), yes).
+section(cpsc, 110, l10, null,       laboratory,   1, inperson, days(wed),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, l11, null,       laboratory,   1, inperson, days(wed),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, l12, null,       laboratory,   1, inperson, days(mon),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l13, null,       laboratory,   1, inperson, days(tue),           time(9, 30),  time(12, 30), yes).
+section(cpsc, 110, l14, null,       laboratory,   1, inperson, days(wed),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l15, null,       laboratory,   1, inperson, days(thu),           time(9, 30),  time(12, 30), yes).
+section(cpsc, 110, l16, null,       laboratory,   1, inperson, days(fri),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l18, null,       laboratory,   1, inperson, days(mon),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, l19, null,       laboratory,   1, inperson, days(fri),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l1a, null,       laboratory,   1, inperson, days(mon),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l1b, null,       laboratory,   1, inperson, days(mon),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l1d, null,       laboratory,   1, inperson, days(tue),           time(9, 30),  time(12, 30), yes).
+section(cpsc, 110, l1e, null,       laboratory,   1, inperson, days(tue),           time(12, 30), time(15, 30), yes).
+section(cpsc, 110, l1f, null,       laboratory,   1, inperson, days(tue),           time(15, 30), time(18, 30), yes).
+section(cpsc, 110, l1g, null,       laboratory,   1, inperson, days(wed),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l1h, null,       laboratory,   1, inperson, days(wed),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l1i, null,       laboratory,   1, inperson, days(fri),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, l1j, null,       laboratory,   1, inperson, days(wed),           time(15, 00), time(18, 00), yes).
+section(cpsc, 110, l1k, full,       laboratory,   1, inperson, days(thu),           time(9, 30),  time(12, 30), yes).
+section(cpsc, 110, l1l, null,       laboratory,   1, inperson, days(thu),           time(15, 30), time(18, 30), yes).
+section(cpsc, 110, l1m, null,       laboratory,   1, inperson, days(thu),           time(12, 30), time(15, 30), yes).
+section(cpsc, 110, l1n, restricted, laboratory,   1, inperson, days(fri),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l1p, restricted, laboratory,   1, inperson, days(fri),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l1q, null,       laboratory,   1, inperson, days(fri),           time(15, 00), time(18, 00), yes).
+section(cpsc, 110, l1r, null,       laboratory,   1, inperson, days(mon),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l1s, null,       laboratory,   1, inperson, days(tue),           time(12, 30), time(15, 30), yes).
+section(cpsc, 110, l1t, null,       laboratory,   1, inperson, days(tue),           time(15, 30), time(18, 30), yes).
+section(cpsc, 110, l1u, null,       laboratory,   1, inperson, days(wed),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l1v, null,       laboratory,   1, inperson, days(thu),           time(12, 30), time(15, 30), yes).
+section(cpsc, 110, l1y, null,       laboratory,   1, inperson, days(mon),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, l1z, null,       laboratory,   1, inperson, days(thu),           time(15, 30), time(18, 30), yes).
+section(cpsc, 110, laa, null,       laboratory,   1, inperson, days(fri),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, lac, null,       laboratory,   1, inperson, days(wed),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, lad, null,       laboratory,   1, inperson, days(tue),           time(15, 30), time(18, 30), yes).
+section(cpsc, 110, lae, null,       laboratory,   1, inperson, days(thu),           time(9, 30),  time(12, 30), yes).
+section(cpsc, 110, 1w1, blocked,    waitinglist,  1, hybrid,   days(tue, thu),      time(11, 00), time(12, 30), yes).
+section(cpsc, 110, 1w2, blocked,    waitinglist,  1, hybrid,   days(tue, thu),      time(14, 00), time(15, 30), yes).
+section(cpsc, 110, 1w3, blocked,    waitinglist,  1, hybrid,   days(mon, wed),      time(9, 30),  time(11, 00), yes).
+section(cpsc, 110, 1w4, blocked,    waitinglist,  1, hybrid,   days(mon, wed),      time(12, 30), time(14, 00), yes).
+section(cpsc, 110, 201, blocked,    lecture,      2, hybrid,   days(tue, thu),      time(12, 30), time(14, 00), yes).
+section(cpsc, 110, l20, blocked,    laboratory,   2, inperson, days(wed),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l21, null,       laboratory,   2, inperson, days(thu),           time(11, 00), time(14, 00), yes).
+section(cpsc, 110, l22, null,       laboratory,   2, inperson, days(tue),           time(17, 00), time(20, 00), yes).
+section(cpsc, 110, l23, null,       laboratory,   2, inperson, days(tue),           time(11, 00), time(14, 00), yes).
+section(cpsc, 110, l25, null,       laboratory,   2, inperson, days(thu),           time(17, 00), time(20, 00), yes).
+section(cpsc, 110, l2a, null,       laboratory,   2, inperson, days(wed),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l2b, null,       laboratory,   2, inperson, days(fri),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l2c, full,       laboratory,   2, inperson, days(mon),           time(15, 00), time(18, 00), yes).
+section(cpsc, 110, l2d, null,       laboratory,   2, inperson, days(wed),           time(15, 00), time(18, 00), yes).
+section(cpsc, 110, l2e, null,       laboratory,   2, inperson, days(mon),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l2f, null,       laboratory,   2, inperson, days(tue),           time(11, 00), time(14, 00), yes).
+section(cpsc, 110, l2h, null,       laboratory,   2, inperson, days(thu),           time(14, 00), time(17, 00), yes).
+section(cpsc, 110, l2j, null,       laboratory,   2, inperson, days(fri),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l2m, full,       laboratory,   2, inperson, days(wed),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l2p, null,       laboratory,   2, inperson, days(tue),           time(14, 00), time(17, 00), yes).
+section(cpsc, 110, l2r, null,       laboratory,   2, inperson, days(mon),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, l2s, null,       laboratory,   2, inperson, days(mon),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l2t, null,       laboratory,   2, inperson, days(mon),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l2u, null,       laboratory,   2, inperson, days(fri),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l2w, null,       laboratory,   2, inperson, days(wed),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, 203, blocked,    lecture,      2, hybrid,   days(tue, thu),      time(9, 30),  time(11, 00), yes).
+section(cpsc, 110, l20, blocked,    laboratory,   2, inperson, days(wed),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l21, null,       laboratory,   2, inperson, days(thu),           time(11, 00), time(14, 00), yes).
+section(cpsc, 110, l22, null,       laboratory,   2, inperson, days(tue),           time(17, 00), time(20, 00), yes).
+section(cpsc, 110, l23, null,       laboratory,   2, inperson, days(tue),           time(11, 00), time(14, 00), yes).
+section(cpsc, 110, l25, null,       laboratory,   2, inperson, days(thu),           time(17, 00), time(20, 00), yes).
+section(cpsc, 110, l2a, null,       laboratory,   2, inperson, days(wed),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l2b, null,       laboratory,   2, inperson, days(fri),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l2c, full,       laboratory,   2, inperson, days(mon),           time(15, 00), time(18, 00), yes).
+section(cpsc, 110, l2d, null,       laboratory,   2, inperson, days(wed),           time(15, 00), time(18, 00), yes).
+section(cpsc, 110, l2e, null,       laboratory,   2, inperson, days(mon),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l2f, null,       laboratory,   2, inperson, days(tue),           time(11, 00), time(14, 00), yes).
+section(cpsc, 110, l2h, null,       laboratory,   2, inperson, days(thu),           time(14, 00), time(17, 00), yes).
+section(cpsc, 110, l2j, null,       laboratory,   2, inperson, days(fri),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l2m, full,       laboratory,   2, inperson, days(wed),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l2p, null,       laboratory,   2, inperson, days(tue),           time(14, 00), time(17, 00), yes).
+section(cpsc, 110, l2r, null,       laboratory,   2, inperson, days(mon),           time(18, 00), time(21, 00), yes).
+section(cpsc, 110, l2s, null,       laboratory,   2, inperson, days(mon),           time(9, 00),  time(12, 00), yes).
+section(cpsc, 110, l2t, null,       laboratory,   2, inperson, days(mon),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l2u, null,       laboratory,   2, inperson, days(fri),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, l2w, null,       laboratory,   2, inperson, days(wed),           time(12, 00), time(15, 00), yes).
+section(cpsc, 110, 2w1, blocked,    waitinglist,  2, hybrid,   days(tue, thu),      time(12, 30), time(14, 00), yes).
+section(cpsc, 110, 2w3, blocked,    waitinglist,  2, hybrid,   days(tue, thu),      time(9, 30),  time(11, 00), yes).
+section(cpsc, 110, v01, restricted, lecture,      2, inperson, days(mon, wed, fri), time(11, 00), time(12, 00), yes).
+section(cpsc, 110, v2a, restricted, laboratory,   2, inperson, days(mon),           time(15, 00), time(18, 00), yes).
+section(cpsc, 110, v2b, restricted, laboratory,   2, inperson, days(wed),           time(15, 00), time(18, 00), yes).
+section(cpsc, 110, v2c, restricted, laboratory,   2, inperson, days(fri),           time(15, 00), time(18, 00), yes).
+section(cpsc, 121, 101, full,       lecture,      1, inperson, days(tue, thu),      time(9, 30),  time(11, 00), yes).
+section(cpsc, 121, l1a, null,       laboratory,   1, inperson, days(wed),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l1b, null,       laboratory,   1, inperson, days(tue),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l1c, null,       laboratory,   1, inperson, days(tue),           time(17, 00), time(19, 00), yes).
+section(cpsc, 121, l1d, restricted, laboratory,   1, inperson, days(mon),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l1e, full,       laboratory,   1, inperson, days(wed),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l1f, full,       laboratory,   1, inperson, days(fri),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l1g, null,       laboratory,   1, inperson, days(fri),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l1h, null,       laboratory,   1, inperson, days(tue),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l1j, null,       laboratory,   1, inperson, days(wed),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l1k, null,       laboratory,   1, inperson, days(fri),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l1l, null,       laboratory,   1, inperson, days(tue),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l1m, null,       laboratory,   1, inperson, days(fri),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l1n, null,       laboratory,   1, inperson, days(wed),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l1q, null,       laboratory,   1, inperson, days(thu),           time(17, 00), time(19, 00), yes).
+section(cpsc, 121, l1r, null,       laboratory,   1, inperson, days(thu),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l1s, null,       laboratory,   1, inperson, days(mon),           time(17, 00), time(19, 00), yes).
+section(cpsc, 121, l1t, full,       laboratory,   1, inperson, days(thu),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l1u, null,       laboratory,   1, inperson, days(mon),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l1v, full,       laboratory,   1, inperson, days(tue),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l1x, null,       laboratory,   1, inperson, days(mon),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l1y, full,       laboratory,   1, inperson, days(thu),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l1z, full,       laboratory,   1, inperson, days(thu),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, t1a, null,       tutorial,     1, inperson, days(mon),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 121, t1b, null,       tutorial,     1, inperson, days(thu),           time(16, 00), time(17, 00), yes).
+section(cpsc, 121, t1c, null,       tutorial,     1, inperson, days(mon),           time(17, 00), time(18, 00), yes).
+section(cpsc, 121, t1d, null,       tutorial,     1, inperson, days(mon),           time(15, 00), time(16, 00), yes).
+section(cpsc, 121, t1e, null,       tutorial,     1, inperson, days(wed),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, t1f, null,       tutorial,     1, inperson, days(mon),           time(12, 00), time(13, 00), yes).
+section(cpsc, 121, t1g, null,       tutorial,     1, inperson, days(mon),           time(16, 00), time(17, 00), yes).
+section(cpsc, 121, t1h, null,       tutorial,     1, inperson, days(thu),           time(14, 00), time(15, 00), yes).
+section(cpsc, 121, t1j, null,       tutorial,     1, inperson, days(tue),           time(15, 00), time(16, 00), yes).
+section(cpsc, 121, t1k, null,       tutorial,     1, inperson, days(wed),           time(18, 00), time(19, 00), yes).
+section(cpsc, 121, t1l, null,       tutorial,     1, inperson, days(thu),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, t1m, null,       tutorial,     1, inperson, days(mon),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, t1n, null,       tutorial,     1, inperson, days(fri),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, t2c, null,       tutorial,     2, inperson, days(tue),           time(13, 00), time(14, 00), yes).
+section(cpsc, 121, t2e, null,       tutorial,     2, inperson, days(thu),           time(13, 00), time(14, 00), yes).
+section(cpsc, 121, t2s, null,       tutorial,     2, inperson, days(thu),           time(12, 00), time(13, 00), yes).
+section(cpsc, 121, t2u, null,       tutorial,     2, inperson, days(tue),           time(12, 00), time(13, 00), yes).
+section(cpsc, 121, 102, restricted, lecture,      1, inperson, days(tue, thu),      time(12, 30), time(14, 00), yes).
+section(cpsc, 121, l1a, null,       laboratory,   1, inperson, days(wed),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l1b, null,       laboratory,   1, inperson, days(tue),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l1c, null,       laboratory,   1, inperson, days(tue),           time(17, 00), time(19, 00), yes).
+section(cpsc, 121, l1d, restricted, laboratory,   1, inperson, days(mon),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l1e, full,       laboratory,   1, inperson, days(wed),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l1f, full,       laboratory,   1, inperson, days(fri),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l1g, null,       laboratory,   1, inperson, days(fri),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l1h, null,       laboratory,   1, inperson, days(tue),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l1j, null,       laboratory,   1, inperson, days(wed),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l1k, null,       laboratory,   1, inperson, days(fri),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l1l, null,       laboratory,   1, inperson, days(tue),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l1m, null,       laboratory,   1, inperson, days(fri),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l1n, null,       laboratory,   1, inperson, days(wed),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l1q, null,       laboratory,   1, inperson, days(thu),           time(17, 00), time(19, 00), yes).
+section(cpsc, 121, l1r, null,       laboratory,   1, inperson, days(thu),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l1s, null,       laboratory,   1, inperson, days(mon),           time(17, 00), time(19, 00), yes).
+section(cpsc, 121, l1t, full,       laboratory,   1, inperson, days(thu),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l1u, null,       laboratory,   1, inperson, days(mon),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l1v, full,       laboratory,   1, inperson, days(tue),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l1x, null,       laboratory,   1, inperson, days(mon),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l1y, full,       laboratory,   1, inperson, days(thu),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l1z, full,       laboratory,   1, inperson, days(thu),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, t1a, null,       tutorial,     1, inperson, days(mon),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 121, t1b, null,       tutorial,     1, inperson, days(thu),           time(16, 00), time(17, 00), yes).
+section(cpsc, 121, t1c, null,       tutorial,     1, inperson, days(mon),           time(17, 00), time(18, 00), yes).
+section(cpsc, 121, t1d, null,       tutorial,     1, inperson, days(mon),           time(15, 00), time(16, 00), yes).
+section(cpsc, 121, t1e, null,       tutorial,     1, inperson, days(wed),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, t1f, null,       tutorial,     1, inperson, days(mon),           time(12, 00), time(13, 00), yes).
+section(cpsc, 121, t1g, null,       tutorial,     1, inperson, days(mon),           time(16, 00), time(17, 00), yes).
+section(cpsc, 121, t1h, null,       tutorial,     1, inperson, days(thu),           time(14, 00), time(15, 00), yes).
+section(cpsc, 121, t1j, null,       tutorial,     1, inperson, days(tue),           time(15, 00), time(16, 00), yes).
+section(cpsc, 121, t1k, null,       tutorial,     1, inperson, days(wed),           time(18, 00), time(19, 00), yes).
+section(cpsc, 121, t1l, null,       tutorial,     1, inperson, days(thu),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, t1m, null,       tutorial,     1, inperson, days(mon),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, t1n, null,       tutorial,     1, inperson, days(fri),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, 103, restricted, lecture,      1, inperson, days(tue, thu),      time(17, 00), time(18, 30), yes).
+section(cpsc, 121, l1a, null,       laboratory,   1, inperson, days(wed),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l1b, null,       laboratory,   1, inperson, days(tue),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l1c, null,       laboratory,   1, inperson, days(tue),           time(17, 00), time(19, 00), yes).
+section(cpsc, 121, l1d, restricted, laboratory,   1, inperson, days(mon),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l1e, full,       laboratory,   1, inperson, days(wed),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l1f, full,       laboratory,   1, inperson, days(fri),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l1g, null,       laboratory,   1, inperson, days(fri),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l1h, null,       laboratory,   1, inperson, days(tue),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l1j, null,       laboratory,   1, inperson, days(wed),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l1k, null,       laboratory,   1, inperson, days(fri),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l1l, null,       laboratory,   1, inperson, days(tue),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l1m, null,       laboratory,   1, inperson, days(fri),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l1n, null,       laboratory,   1, inperson, days(wed),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l1q, null,       laboratory,   1, inperson, days(thu),           time(17, 00), time(19, 00), yes).
+section(cpsc, 121, l1r, null,       laboratory,   1, inperson, days(thu),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l1s, null,       laboratory,   1, inperson, days(mon),           time(17, 00), time(19, 00), yes).
+section(cpsc, 121, l1t, full,       laboratory,   1, inperson, days(thu),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l1u, null,       laboratory,   1, inperson, days(mon),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l1v, full,       laboratory,   1, inperson, days(tue),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l1x, null,       laboratory,   1, inperson, days(mon),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l1y, full,       laboratory,   1, inperson, days(thu),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l1z, full,       laboratory,   1, inperson, days(thu),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, t1a, null,       tutorial,     1, inperson, days(mon),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 121, t1b, null,       tutorial,     1, inperson, days(thu),           time(16, 00), time(17, 00), yes).
+section(cpsc, 121, t1c, null,       tutorial,     1, inperson, days(mon),           time(17, 00), time(18, 00), yes).
+section(cpsc, 121, t1d, null,       tutorial,     1, inperson, days(mon),           time(15, 00), time(16, 00), yes).
+section(cpsc, 121, t1e, null,       tutorial,     1, inperson, days(wed),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, t1f, null,       tutorial,     1, inperson, days(mon),           time(12, 00), time(13, 00), yes).
+section(cpsc, 121, t1g, null,       tutorial,     1, inperson, days(mon),           time(16, 00), time(17, 00), yes).
+section(cpsc, 121, t1h, null,       tutorial,     1, inperson, days(thu),           time(14, 00), time(15, 00), yes).
+section(cpsc, 121, t1j, null,       tutorial,     1, inperson, days(tue),           time(15, 00), time(16, 00), yes).
+section(cpsc, 121, t1k, null,       tutorial,     1, inperson, days(wed),           time(18, 00), time(19, 00), yes).
+section(cpsc, 121, t1l, null,       tutorial,     1, inperson, days(thu),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, t1m, null,       tutorial,     1, inperson, days(mon),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, t1n, null,       tutorial,     1, inperson, days(fri),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, 1w1, blocked,    waitinglist,  1, inperson, days(tue, thu),      time(9, 30),  time(11, 00), yes).
+section(cpsc, 121, 1w2, blocked,    waitinglist,  1, inperson, days(tue, thu),      time(12, 30), time(14, 00), yes).
+section(cpsc, 121, 1w3, blocked,    waitinglist,  1, inperson, days(tue, thu),      time(17, 00), time(18, 30), yes).
+section(cpsc, 121, 201, blocked,    lecture,      2, inperson, days(tue, thu),      time(12, 30), time(14, 00), yes).
+section(cpsc, 121, l22, null,       laboratory,   2, inperson, days(mon),           time(9, 00),  time(11, 00), yes ).
+section(cpsc, 121, l23, null,       laboratory,   2, inperson, days(fri),           time(17, 00), time(19, 00), yes ).
+section(cpsc, 121, l24, null,       laboratory,   2, inperson, days(tue),           time(17, 00), time(19, 00), yes ).
+section(cpsc, 121, l25, null,       laboratory,   2, inperson, days(tue),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l26, null,       laboratory,   2, inperson, days(tue),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l27, null,       laboratory,   2, inperson, days(thu),           time(14, 00), time(16, 00), yes).
+section(cpsc, 121, l28, null,       laboratory,   2, inperson, days(wed),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l29, null,       laboratory,   2, inperson, days(mon),           time(12, 00), time(14, 00), yes).
+section(cpsc, 121, l2a, null,       laboratory,   2, inperson, days(tue),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l2b, null,       laboratory,   2, inperson, days(wed),           time(17, 00), time(19, 00), yes).
+section(cpsc, 121, l2c, null,       laboratory,   2, inperson, days(fri),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l2d, null,       laboratory,   2, inperson, days(thu),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l2e, null,       laboratory,   2, inperson, days(thu),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l2f, null,       laboratory,   2, inperson, days(tue),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l2g, full,       laboratory,   2, inperson, days(tue),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l2h, null,       laboratory,   2, inperson, days(fri),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l2j, null,       laboratory,   2, inperson, days(wed),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l2k, null,       laboratory,   2, inperson, days(mon),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l2l, null,       laboratory,   2, inperson, days(wed),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l2m, null,       laboratory,   2, inperson, days(thu),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l2n, null,       laboratory,   2, inperson, days(mon),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l2p, null,       laboratory,   2, inperson, days(mon),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l2q, null,       laboratory,   2, inperson, days(tue),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l2r, null,       laboratory,   2, inperson, days(fri),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l2s, null,       laboratory,   2, inperson, days(mon),           time(17, 00), time(19, 00), yes).
+section(cpsc, 121, l2t, null,       laboratory,   2, inperson, days(thu),           time(17, 00), time(19, 00), yes).
+section(cpsc, 121, l2u, full,       laboratory,   2, inperson, days(fri),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l2v, null,       laboratory,   2, inperson, days(thu),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l2y, null,       laboratory,   2, inperson, days(wed),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l2z, null,       laboratory,   2, inperson, days(wed),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, t2a, null,       tutorial,     2, inperson, days(wed),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, t2b, restricted, tutorial,     2, inperson, days(mon),           time(13, 00), time(14, 00), yes).
+section(cpsc, 121, t2c, null,       tutorial,     2, inperson, days(tue),           time(13, 00), time(14, 00), yes).
+section(cpsc, 121, t2d, null,       tutorial,     2, inperson, days(thu),           time(12, 00), time(13, 00), yes).
+section(cpsc, 121, t2e, null,       tutorial,     2, inperson, days(thu),           time(13, 00), time(14, 00), yes).
+section(cpsc, 121, t2f, null,       tutorial,     2, inperson, days(thu),           time(15, 00), time(16, 00), yes).
+section(cpsc, 121, t2g, full,       tutorial,     2, inperson, days(thu),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, t2h, null,       tutorial,     2, inperson, days(mon),           time(15, 00), time(16, 00), yes).
+section(cpsc, 121, t2j, null,       tutorial,     2, inperson, days(wed),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 121, t2k, null,       tutorial,     2, inperson, days(mon),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, t2m, null,       tutorial,     2, inperson, days(fri),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, t2n, null,       tutorial,     2, inperson, days(thu),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 121, t2p, null,       tutorial,     2, inperson, days(mon),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 121, t2q, null,       tutorial,     2, inperson, days(fri),           time(13, 00), time(14, 00), yes).
+section(cpsc, 121, t2r, null,       tutorial,     2, inperson, days(mon),           time(17, 00), time(18, 00), yes).
+section(cpsc, 121, t2s, null,       tutorial,     2, inperson, days(thu),           time(12, 00), time(13, 00), yes).
+section(cpsc, 121, t2t, null,       tutorial,     2, inperson, days(mon),           time(10, 00), time(11, 00), yes).
+section(cpsc, 121, t2u, null,       tutorial,     2, inperson, days(tue),           time(12, 00), time(13, 00), yes).
+section(cpsc, 121, 202, blocked,    lecture,      2, inperson, days(tue, thu),      time(15, 30), time(17, 00), yes).
+section(cpsc, 121, l22, null,       laboratory,   2, inperson, days(mon),           time(9, 00),  time(11, 00), yes ).
+section(cpsc, 121, l23, null,       laboratory,   2, inperson, days(fri),           time(17, 00), time(19, 00), yes ).
+section(cpsc, 121, l24, null,       laboratory,   2, inperson, days(tue),           time(17, 00), time(19, 00), yes ).
+section(cpsc, 121, l25, null,       laboratory,   2, inperson, days(tue),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l26, null,       laboratory,   2, inperson, days(tue),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l27, null,       laboratory,   2, inperson, days(thu),           time(14, 00), time(16, 00), yes).
+section(cpsc, 121, l28, null,       laboratory,   2, inperson, days(wed),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l29, null,       laboratory,   2, inperson, days(mon),           time(12, 00), time(14, 00), yes).
+section(cpsc, 121, l2a, null,       laboratory,   2, inperson, days(tue),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l2b, null,       laboratory,   2, inperson, days(wed),           time(17, 00), time(19, 00), yes).
+section(cpsc, 121, l2c, null,       laboratory,   2, inperson, days(fri),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l2d, null,       laboratory,   2, inperson, days(thu),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l2e, null,       laboratory,   2, inperson, days(thu),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l2f, null,       laboratory,   2, inperson, days(tue),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l2g, full,       laboratory,   2, inperson, days(tue),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l2h, null,       laboratory,   2, inperson, days(fri),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l2j, null,       laboratory,   2, inperson, days(wed),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l2k, null,       laboratory,   2, inperson, days(mon),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l2l, null,       laboratory,   2, inperson, days(wed),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l2m, null,       laboratory,   2, inperson, days(thu),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l2n, null,       laboratory,   2, inperson, days(mon),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l2p, null,       laboratory,   2, inperson, days(mon),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l2q, null,       laboratory,   2, inperson, days(tue),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l2r, null,       laboratory,   2, inperson, days(fri),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l2s, null,       laboratory,   2, inperson, days(mon),           time(17, 00), time(19, 00), yes).
+section(cpsc, 121, l2t, null,       laboratory,   2, inperson, days(thu),           time(17, 00), time(19, 00), yes).
+section(cpsc, 121, l2u, full,       laboratory,   2, inperson, days(fri),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l2v, null,       laboratory,   2, inperson, days(thu),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l2y, null,       laboratory,   2, inperson, days(wed),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l2z, null,       laboratory,   2, inperson, days(wed),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, t2a, null,       tutorial,     2, inperson, days(wed),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, t2b, restricted, tutorial,     2, inperson, days(mon),           time(13, 00), time(14, 00), yes).
+section(cpsc, 121, t2c, null,       tutorial,     2, inperson, days(tue),           time(13, 00), time(14, 00), yes).
+section(cpsc, 121, t2d, null,       tutorial,     2, inperson, days(thu),           time(12, 00), time(13, 00), yes).
+section(cpsc, 121, t2e, null,       tutorial,     2, inperson, days(thu),           time(13, 00), time(14, 00), yes).
+section(cpsc, 121, t2f, null,       tutorial,     2, inperson, days(thu),           time(15, 00), time(16, 00), yes).
+section(cpsc, 121, t2g, full,       tutorial,     2, inperson, days(thu),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, t2h, null,       tutorial,     2, inperson, days(mon),           time(15, 00), time(16, 00), yes).
+section(cpsc, 121, t2j, null,       tutorial,     2, inperson, days(wed),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 121, t2k, null,       tutorial,     2, inperson, days(mon),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, t2m, null,       tutorial,     2, inperson, days(fri),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, t2n, null,       tutorial,     2, inperson, days(thu),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 121, t2p, null,       tutorial,     2, inperson, days(mon),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 121, t2q, null,       tutorial,     2, inperson, days(fri),           time(13, 00), time(14, 00), yes).
+section(cpsc, 121, t2r, null,       tutorial,     2, inperson, days(mon),           time(17, 00), time(18, 00), yes).
+section(cpsc, 121, t2s, null,       tutorial,     2, inperson, days(thu),           time(12, 00), time(13, 00), yes).
+section(cpsc, 121, t2t, null,       tutorial,     2, inperson, days(mon),           time(10, 00), time(11, 00), yes).
+section(cpsc, 121, t2u, null,       tutorial,     2, inperson, days(tue),           time(12, 00), time(13, 00), yes).
+section(cpsc, 121, 203, blocked,    lecture,      2, inperson, days(tue, thu),      time(17, 00), time(18, 30), yes).
+section(cpsc, 121, l22, null,       laboratory,   2, inperson, days(mon),           time(9, 00),  time(11, 00), yes ).
+section(cpsc, 121, l23, null,       laboratory,   2, inperson, days(fri),           time(17, 00), time(19, 00), yes ).
+section(cpsc, 121, l25, null,       laboratory,   2, inperson, days(tue),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l26, null,       laboratory,   2, inperson, days(tue),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l27, null,       laboratory,   2, inperson, days(thu),           time(14, 00), time(16, 00), yes).
+section(cpsc, 121, l28, null,       laboratory,   2, inperson, days(wed),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l29, null,       laboratory,   2, inperson, days(mon),           time(12, 00), time(14, 00), yes).
+section(cpsc, 121, l2a, null,       laboratory,   2, inperson, days(tue),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l2b, null,       laboratory,   2, inperson, days(wed),           time(17, 00), time(19, 00), yes).
+section(cpsc, 121, l2c, null,       laboratory,   2, inperson, days(fri),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l2d, null,       laboratory,   2, inperson, days(thu),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l2e, null,       laboratory,   2, inperson, days(thu),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l2f, null,       laboratory,   2, inperson, days(tue),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l2g, full,       laboratory,   2, inperson, days(tue),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l2h, null,       laboratory,   2, inperson, days(fri),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l2j, null,       laboratory,   2, inperson, days(wed),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l2k, null,       laboratory,   2, inperson, days(mon),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l2l, null,       laboratory,   2, inperson, days(wed),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l2m, null,       laboratory,   2, inperson, days(thu),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l2n, null,       laboratory,   2, inperson, days(mon),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l2p, null,       laboratory,   2, inperson, days(mon),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l2q, null,       laboratory,   2, inperson, days(tue),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l2r, null,       laboratory,   2, inperson, days(fri),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l2s, null,       laboratory,   2, inperson, days(mon),           time(17, 00), time(19, 00), yes).
+section(cpsc, 121, l2t, null,       laboratory,   2, inperson, days(thu),           time(17, 00), time(19, 00), yes).
+section(cpsc, 121, l2u, full,       laboratory,   2, inperson, days(fri),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l2v, null,       laboratory,   2, inperson, days(thu),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l2y, null,       laboratory,   2, inperson, days(wed),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l2z, null,       laboratory,   2, inperson, days(wed),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, t2a, null,       tutorial,     2, inperson, days(wed),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, t2b, restricted, tutorial,     2, inperson, days(mon),           time(13, 00), time(14, 00), yes).
+section(cpsc, 121, t2c, null,       tutorial,     2, inperson, days(tue),           time(13, 00), time(14, 00), yes).
+section(cpsc, 121, t2d, null,       tutorial,     2, inperson, days(thu),           time(12, 00), time(13, 00), yes).
+section(cpsc, 121, t2e, null,       tutorial,     2, inperson, days(thu),           time(13, 00), time(14, 00), yes).
+section(cpsc, 121, t2f, null,       tutorial,     2, inperson, days(thu),           time(15, 00), time(16, 00), yes).
+section(cpsc, 121, t2g, full,       tutorial,     2, inperson, days(thu),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, t2h, null,       tutorial,     2, inperson, days(mon),           time(15, 00), time(16, 00), yes).
+section(cpsc, 121, t2j, null,       tutorial,     2, inperson, days(wed),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 121, t2k, null,       tutorial,     2, inperson, days(mon),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, t2m, null,       tutorial,     2, inperson, days(fri),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, t2n, null,       tutorial,     2, inperson, days(thu),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 121, t2p, null,       tutorial,     2, inperson, days(mon),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 121, t2q, null,       tutorial,     2, inperson, days(fri),           time(13, 00), time(14, 00), yes).
+section(cpsc, 121, t2r, null,       tutorial,     2, inperson, days(mon),           time(17, 00), time(18, 00), yes).
+section(cpsc, 121, t2s, null,       tutorial,     2, inperson, days(thu),           time(12, 00), time(13, 00), yes).
+section(cpsc, 121, t2t, null,       tutorial,     2, inperson, days(mon),           time(10, 00), time(11, 00), yes).
+section(cpsc, 121, t2u, null,       tutorial,     2, inperson, days(tue),           time(12, 00), time(13, 00), yes).
+section(cpsc, 121, 204, blocked,    lecture,      2, inperson, days(tue, thu),      time(9, 30),  time(11, 00), yes).
+section(cpsc, 121, l22, null,       laboratory,   2, inperson, days(mon),           time(9, 00),  time(11, 00), yes ).
+section(cpsc, 121, l23, null,       laboratory,   2, inperson, days(fri),           time(17, 00), time(19, 00), yes ).
+section(cpsc, 121, l24, null,       laboratory,   2, inperson, days(tue),           time(17, 00), time(19, 00), yes ).
+section(cpsc, 121, l25, null,       laboratory,   2, inperson, days(tue),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l26, null,       laboratory,   2, inperson, days(tue),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l27, null,       laboratory,   2, inperson, days(thu),           time(14, 00), time(16, 00), yes).
+section(cpsc, 121, l28, null,       laboratory,   2, inperson, days(wed),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l29, null,       laboratory,   2, inperson, days(mon),           time(12, 00), time(14, 00), yes).
+section(cpsc, 121, l2a, null,       laboratory,   2, inperson, days(tue),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l2b, null,       laboratory,   2, inperson, days(wed),           time(17, 00), time(19, 00), yes).
+section(cpsc, 121, l2c, null,       laboratory,   2, inperson, days(fri),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l2d, null,       laboratory,   2, inperson, days(thu),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l2e, null,       laboratory,   2, inperson, days(thu),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l2f, null,       laboratory,   2, inperson, days(tue),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l2g, full,       laboratory,   2, inperson, days(tue),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l2h, null,       laboratory,   2, inperson, days(fri),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l2j, null,       laboratory,   2, inperson, days(wed),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l2k, null,       laboratory,   2, inperson, days(mon),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l2l, null,       laboratory,   2, inperson, days(wed),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l2m, null,       laboratory,   2, inperson, days(thu),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l2n, null,       laboratory,   2, inperson, days(mon),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l2p, null,       laboratory,   2, inperson, days(mon),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l2q, null,       laboratory,   2, inperson, days(tue),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l2r, null,       laboratory,   2, inperson, days(fri),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, l2s, null,       laboratory,   2, inperson, days(mon),           time(17, 00), time(19, 00), yes).
+section(cpsc, 121, l2t, null,       laboratory,   2, inperson, days(thu),           time(17, 00), time(19, 00), yes).
+section(cpsc, 121, l2u, full,       laboratory,   2, inperson, days(fri),           time(13, 00), time(15, 00), yes).
+section(cpsc, 121, l2v, null,       laboratory,   2, inperson, days(thu),           time(11, 00), time(13, 00), yes).
+section(cpsc, 121, l2y, null,       laboratory,   2, inperson, days(wed),           time(9, 00),  time(11, 00), yes).
+section(cpsc, 121, l2z, null,       laboratory,   2, inperson, days(wed),           time(15, 00), time(17, 00), yes).
+section(cpsc, 121, t2a, null,       tutorial,     2, inperson, days(wed),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, t2b, restricted, tutorial,     2, inperson, days(mon),           time(13, 00), time(14, 00), yes).
+section(cpsc, 121, t2c, null,       tutorial,     2, inperson, days(tue),           time(13, 00), time(14, 00), yes).
+section(cpsc, 121, t2d, null,       tutorial,     2, inperson, days(thu),           time(12, 00), time(13, 00), yes).
+section(cpsc, 121, t2e, null,       tutorial,     2, inperson, days(thu),           time(13, 00), time(14, 00), yes).
+section(cpsc, 121, t2f, null,       tutorial,     2, inperson, days(thu),           time(15, 00), time(16, 00), yes).
+section(cpsc, 121, t2g, full,       tutorial,     2, inperson, days(thu),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, t2h, null,       tutorial,     2, inperson, days(mon),           time(15, 00), time(16, 00), yes).
+section(cpsc, 121, t2j, null,       tutorial,     2, inperson, days(wed),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 121, t2k, null,       tutorial,     2, inperson, days(mon),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, t2m, null,       tutorial,     2, inperson, days(fri),           time(11, 00), time(12, 00), yes).
+section(cpsc, 121, t2n, null,       tutorial,     2, inperson, days(thu),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 121, t2p, null,       tutorial,     2, inperson, days(mon),           time(9, 00),  time(10, 00), yes).
+section(cpsc, 121, t2q, null,       tutorial,     2, inperson, days(fri),           time(13, 00), time(14, 00), yes).
+section(cpsc, 121, t2r, null,       tutorial,     2, inperson, days(mon),           time(17, 00), time(18, 00), yes).
+section(cpsc, 121, t2s, null,       tutorial,     2, inperson, days(thu),           time(12, 00), time(13, 00), yes).
+section(cpsc, 121, t2t, null,       tutorial,     2, inperson, days(mon),           time(10, 00), time(11, 00), yes).
+section(cpsc, 121, t2u, null,       tutorial,     2, inperson, days(tue),           time(12, 00), time(13, 00), yes).
+section(cpsc, 121, 2w1, blocked,    waitinglist,  2, inperson, days(tue, thu),      time(12, 30), time(14, 00), yes).
+section(cpsc, 121, 2w2, blocked,    waitinglist,  2, inperson, days(tue, thu),      time(15, 30), time(17, 00), yes).
+section(cpsc, 121, 2w3, blocked,    waitinglist,  2, inperson, days(tue, thu),      time(17, 00), time(18, 30), yes).
+section(cpsc, 121, 2w4, blocked,    waitinglist,  2, inperson, days(tue, thu),      time(9, 30),  time(11, 00), yes).
