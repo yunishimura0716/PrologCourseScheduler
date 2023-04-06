@@ -11,6 +11,11 @@
 :- use_module(library(http/http_header)).
 :- use_module(library(http/http_server)).
 :- use_module(library(http/http_multipart_plugin)).
+:- use_module(library(lists)).
+:- use_module(samplefacts).
+
+% facts files
+:- consult('samplefacts.pl').
 
 % Set the location of the HTML file
 :- multifile http:location/3.
@@ -69,15 +74,55 @@ substitute(Template, [var(Name, Value)|Vars], Result) :-
         format('An error occurred while processing the request.~n')
     ).
 
+% Convert a section/11 fact to a JSON object
+section_to_json(section(Course, Section, _, _, _, _, _, _, _, _, _), Json) :-
+  Json = json{course:Course, section:Section}.
+
+number_to_json(number, json) :- json = json{course: cpsc, number: number}.
+
+in_section(Course, Number, Semester, IsInPerson) :-
+  section(Course, Number,_,_,lecture, Semester,_,_,_,_, IsInPerson).
+
+string_atom(String,Atom) :-
+  atom_string(Atom,String).
+
+is_string_list([]).
+is_string_list([X|R]) :-
+  string(X),
+  is_string_list(R).
+
 % Define the request handler
 search_handler(Request) :-
-  http_read_json(Request, Data),
-  % process JSONIn
-  % ...
-  % return response
+  http_read_json_dict(Request, DictIn, [as(atom)]),
+  % http_read_json_dict(Request, DictIn, []),
 
-  % Return the same data back as a response
-  reply_json(Data).
+  format(user_error, "Request: ~w~n", [DictIn]),
+
+  % extract courses
+  get_dict(courses, DictIn, CoursesString), 
+  is_string_list(CoursesString),
+  % convert the string to atom for courses
+  maplist(string_atom, CoursesString, Courses),
+  % extract semester
+  get_dict(semester, DictIn, SemesterString),
+  atom_number(SemesterString, Semester),
+  % extract is in person
+  get_dict(in_person, DictIn, IsInPersonString),
+  string_atom(IsInPersonString, IsInPerson),
+
+  format(user_error, "extracted ~w,~w,~w~n", [Courses, Semester, IsInPerson]),
+
+  % Process the course(s) to get the matching section(s)
+  findall(Section, (member(Course, Courses), in_section(Course, Number, Semester, IsInPerson), Section = section(Course, Number,_,_,lecture,_,_,_,_,_,_)), Sections),
+  % format(user_error, 'Sections: ~w~n', [Sections]),
+
+  % Convert the matching section(s) to a JSON response
+  maplist(section_to_json, Sections, Jsons),
+  % maplist(number_to_json, Numbers, Jsons),
+  reply_json_dict(json{data:Jsons}).
+
+  % Log the request and response
+  % format(user_error, 'Response: ~w~n', [_{data: Sections}]).
 
 % Start the server
 server(Port) :-

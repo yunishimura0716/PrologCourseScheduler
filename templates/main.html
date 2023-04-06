@@ -102,7 +102,7 @@
         </div> -->
         <div class="col-md-8">
           <label for="validationDefault02" class="form-label">Specific Class (Each Classes has to be separated by comma)</label>
-          <input type="text" name="specific-course" class="form-control" id="validationDefault02" value="" placeholder="e.g.: CPCS312, MATH304">
+          <input type="text" name="specificCourse" class="form-control" id="validationDefault02" value="" placeholder="e.g.: CPCS312, MATH304">
         </div>
         <div class="col-md-12">
           <label class="form-label">Time slots you don't want to have a class</label>
@@ -152,10 +152,7 @@
       // Get the form data as an object
       const formData = new FormData(form);
 
-      // add courses
-      let elList = document.querySelectorAll('.selected-course');
-      let items = Array.from(elList).map(item => item.getAttribute('data-value').toLowerCase());
-      formData.append('courses', JSON.stringify(items));
+      let ellist, items;
       // add years
       elList = document.querySelectorAll('.selected-year');
       items = Array.from(elList).map(item => item.getAttribute('data-value').toLowerCase());
@@ -163,18 +160,30 @@
       // time slots
       elList = document.querySelectorAll('.day-of-week');
       items = Array.from(elList).map(item => item.options[item.selectedIndex].value.toLowerCase())
-      formData.append('day-of-weeks', JSON.stringify(items));
+      formData.append('dayOfWeeks', JSON.stringify(items));
       elList = document.querySelectorAll('.start-time');
       items = Array.from(elList).map(item => item.value.toLowerCase());
-      formData.append('start-times', JSON.stringify(items));
+      formData.append('startTimes', JSON.stringify(items));
       elList = document.querySelectorAll('.end-time');
       items = Array.from(elList).map(item => item.value.toLowerCase())
-      formData.append('end-times', JSON.stringify(items));
+      formData.append('endTimes', JSON.stringify(items));
       
+      // add courses
+      ellist = document.querySelectorAll('.selected-course');
+      items = Array.from(ellist).map(item => item.getAttribute('data-value').toLowerCase());
+      // formData.append('courses', JSON.stringify(items));
+
+      // add semester
+      formData.append('semester', 1);
+      // add in person
+      formData.append('in_person', 'yes');
 
       const data = Object.fromEntries(formData.entries());
-  
-      // Send a custom GET request to the server
+      data.courses = items;
+      data.specificCourse = [];
+
+      console.log(data);
+      
       const url = '/search';
       fetch(url, {
         method: 'POST',
