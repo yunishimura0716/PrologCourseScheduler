@@ -75,15 +75,15 @@ substitute(Template, [var(Name, Value)|Vars], Result) :-
     ).
 
 % Convert a section/11 fact to a JSON object
-section_to_json(section(_, Course, Section, _, _, _, _, _, _, _, _, _), Json) :-
+section_to_json(section(_, Course, Section, _, _, _, _, _, _, _, _, _, _), Json) :-
   Json = json{course:Course, section:Section}.
 group_to_sections(Combination, CombinationJson) :-
   maplist(section_to_json, Combination, CombinationJson).
 
 number_to_json(number, json) :- json = json{course: cpsc, number: number}.
 
-in_section(Credit, Course, Number, Semester, IsInPerson) :-
-  section(Credit, Course, Number,_,_,lecture, Semester,_,_,_,_, IsInPerson).
+in_section(Credit, Course, Number, Year, Semester, IsInPerson) :-
+  section(Credit, Course, Number,_,_,lecture, Year, Semester,_,_,_,_, IsInPerson).
 
 string_atom(String,Atom) :-
   atom_string(Atom,String).
@@ -118,10 +118,10 @@ search_handler(Request) :-
   format(user_error, "extracted ~w,~w,~w,~w~n", [Courses, Semester, IsInPerson, TotalCredits]),
 
   % Process the course(s) to get the matching section(s)
-  % findall(Section, (member(Course, Courses), in_section(Credit, Course, Number, Semester, IsInPerson), Section = section(Credit, Course, Number,_,_,lecture,_,_,_,_,_,_)), Sections),
-  findall(section(Credit, Course, Number, _, _, lecture, Semester, InPerson, Days, StartTime, EndTime, IsInPerson), (
+  % findall(Section, (member(Course, Courses), in_section(Credit, Course, Number, Year, Semester, IsInPerson), Section = section(Credit, Course, Number,_,_,lecture, Year,_,_,_,_,_,_)), Sections),
+  findall(section(Credit, Course, Number, _, _, lecture, Year, Semester, InPerson, Days, StartTime, EndTime, IsInPerson), (
     member(Course, Courses),
-    in_section(Credit, Course, Number, Semester, IsInPerson)
+    in_section(Credit, Course, Number, Year, Semester, IsInPerson)
   ), Sections),
   % format(user_error, 'Sections: ~w~n', [Sections]),
 
@@ -177,16 +177,16 @@ combinations([_|Xs], Ys) :-
 % calculate_total_credits(+Sections, -TotalCredits)
 % TotalCredits is the sum of credits of all sections in Sections
 calculate_total_credits([], 0).
-calculate_total_credits([section(Credits, _, _, _, _, _, _, _, _, _, _, _)|Sections], TotalCredits) :-
+calculate_total_credits([section(Credits, _, _, _, _, _, _, _, _, _, _, _, _)|Sections], TotalCredits) :-
     calculate_total_credits(Sections, RemainingCredits),
     TotalCredits is Credits + RemainingCredits.
 
 % check_unique_combination(+Combination)
 % Succeeds if all sections in the combination have a unique (dept, number) pair
 check_unique_combination([]).
-check_unique_combination([section(_, Dept, Number, _, _, _, _, _, _, _, _, _)|Sections]) :-
+check_unique_combination([section(_, Dept, Number, _, _, _, _, _, _, _, _, _, _)|Sections]) :-
     % Check if the current section has a unique (dept, number) pair
-    \+ member(section(_, Dept, Number, _, _, _, _, _, _, _, _, _), Sections),
+    \+ member(section(_, Dept, Number, _, _, _, _, _, _, _, _, _, _), Sections),
     % Check if the remaining sections have unique (dept, number) pairs
     check_unique_combination(Sections),
     % If the previous goal succeeded, cut to prevent backtracking and return true
@@ -203,12 +203,12 @@ sort_sections(Sections, SortedSections) :-
 
 % sort_section(+Section, -SortedSection)
 % Sorts a section/12 term by dept, number, and section
-sort_section(section(Credits, Dept, Number, _, _, _, _, _, _, _, _, _), section(Credits, SortedDept, SortedNumber, _, _, _, _, _, _, _, _, _)) :-
+sort_section(section(Credits, Dept, Number, _, _, _, _, _, _, _, _, _, _), section(Credits, SortedDept, SortedNumber, _, _, _, _, _, _, _, _, _, _)) :-
     sort([Dept, Number], [SortedDept, SortedNumber]).
 
 % same_dept_number(+Section1, +Section2)
 % True if Section1 and Section2 have the same (dept, number) pair
-same_dept_number(section(_, Dept1, Number1, _, _, _, _, _, _, _, _, _), section(_, Dept2, Number2, _, _, _, _, _, _, _, _, _)) :-
+same_dept_number(section(_, Dept1, Number1, _, _, _, _, _, _, _, _, _, _), section(_, Dept2, Number2, _, _, _, _, _, _, _, _, _, _)) :-
     Dept1 == Dept2,
     Number1 == Number2.
 
