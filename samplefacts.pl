@@ -1,7 +1,7 @@
-:- module(samplefacts, [section/11]).
+:- module(samplefacts, [section/12]).
 :- format('samplefacts is loaded.~n').
 
-%section(credits, dept, number, section, status, activity, term, inperson?, days, start_time, end_time, inperson_required)
+% section(credits, dept, number, section, status, activity, term, inperson?, days, start_time, end_time, inperson_required)
 section(3,  cpsc, 100, 101,  restricted, lecture,      1, inperson, days(mon, wed, fri), time(15, 00), time(16, 00), yes).
 section(3,  cpsc, 100, l1b,  full,       laboratory,   1, inperson, days(wed),           time(12, 00), time(13, 00), yes).
 section(3,  cpsc, 100, l1c,  null,       laboratory,   1, inperson, days(tue),           time(17, 30), time(18, 30), yes).
