@@ -13,6 +13,7 @@
 :- use_module(library(http/http_multipart_plugin)).
 :- use_module(library(lists)).
 :- use_module(samplefacts).
+:- use_module(mytime).
 
 % facts files
 :- consult('samplefacts.pl').
@@ -98,13 +99,14 @@ search_handler(Request) :-
   http_read_json_dict(Request, DictIn, [as(atom)]),
   % http_read_json_dict(Request, DictIn, []),
 
-  format(user_error, "Request: ~w~n", [DictIn]),
+  format(user_error, "~nRequest: ~w~n", [DictIn]),
 
   % extract courses
   get_dict(courses, DictIn, CoursesString), 
-  is_string_list(CoursesString),
-  % convert the string to atom for courses
   maplist(string_atom, CoursesString, Courses),
+  % extract years
+  get_dict(years, DictIn, YearsString),
+  maplist(atom_number, YearsString, Years),
   % extract semester
   get_dict(semester, DictIn, SemesterString),
   atom_number(SemesterString, Semester),
@@ -115,18 +117,31 @@ search_handler(Request) :-
   get_dict(credits, DictIn, TotalCreditsString),
   atom_number(TotalCreditsString, TotalCredits),
 
-  format(user_error, "extracted ~w,~w,~w,~w~n", [Courses, Semester, IsInPerson, TotalCredits]),
+  format(user_error, "extracted ~w,~w,~w,~w,~w~n", [Courses, Years, Semester, IsInPerson, TotalCredits]),
+
+  % get day of weeks 
+  get_dict(dayOfWeeks, DictIn, DayOfWeeksString),
+  maplist(string_atom, DayOfWeeksString, DayOfWeeks),
+  % get start times
+  get_dict(startTimes, DictIn, StartTimes),
+  % get end times
+  get_dict(endTimes, DictIn, EndTimes),
+
+  format(user_error, "extracted ~w,~w,~w~n", [DayOfWeeks, StartTimes, EndTimes]),
 
   % Process the course(s) to get the matching section(s)
   % findall(Section, (member(Course, Courses), in_section(Credit, Course, Number, Year, Semester, IsInPerson), Section = section(Credit, Course, Number,_,_,lecture, Year,_,_,_,_,_,_)), Sections),
-  findall(section(Credit, Course, Number, _, _, lecture, Year, Semester, InPerson, Days, StartTime, EndTime, IsInPerson), (
+  findall(section(Credit, Course, Number, Section, _, lecture, Year, Semester, InPerson, Days, StartTime, EndTime, IsInPerson), (
     member(Course, Courses),
-    in_section(Credit, Course, Number, Year, Semester, IsInPerson)
-  ), Sections),
-  % format(user_error, 'Sections: ~w~n', [Sections]),
+    member(Year, Years),
+    section(Credit, Course, Number, Section,_,lecture, Year, Semester, InPerson, Days, StartTime, EndTime, IsInPerson)
+  ), Sections), 
+  filter_sections_by_time(Sections, DayOfWeeks, StartTimes, EndTimes, FilteredSections),
+  format(user_error, 'Sections: ~w~n', [Sections]),
+  format(user_error, 'FilteredSections: ~w~n', [FilteredSections]),
 
   section_group(TotalCredits, Sections, SectionGroup),
-  format(user_error, 'SectionGroup: ~w~n', [SectionGroup]),
+  % format(user_error, 'SectionGroup: ~w~n', [SectionGroup]),
 
   % Convert the matching section(s) to a JSON response
   maplist(group_to_sections, SectionGroup, JsonGroup),
