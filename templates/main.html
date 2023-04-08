@@ -104,6 +104,28 @@
           <label for="validationDefault02" class="form-label">Specific Class (Each Classes has to be separated by comma)</label>
           <input type="text" name="specificCourse" class="form-control" id="validationDefault02" value="" placeholder="e.g.: CPCS312, MATH304">
         </div>
+        <div class="col-md-2">
+          <label for="semester">Select Semester:</label>
+          <select class="form-control" id="semester" name="semester">
+            <option value="1">Semester 1</option>
+            <option value="2">Semester 2</option>
+          </select> 
+        </div>
+        <div class="col-md-2">
+          <label for="styles">Delivery Options:</label>
+          <div>
+            <input class="style" type="checkbox" id="inperson" name="styles" value="inperson" checked>
+            <label for="inperson">In-person</label>
+          </div>
+          <div>
+            <input class="style" type="checkbox" id="online" name="styles" value="online" checked>
+            <label for="online">Online</label>
+          </div>
+          <div>
+            <input class="style" type="checkbox" id="hybrid" name="styles" value="hybrid" checked>
+            <label for="hybrid">Hybrid</label>
+          </div>
+        </div>
         <div class="col-md-12">
           <label class="form-label">Time slots you don't want to have a class</label>
           <div id="time-slots-container">
@@ -138,7 +160,22 @@
       </form> 
     </div>
     <div id="schedule">
-      
+      <div id="schedule-nextbtn" class="d-flex justify-content-start">
+      </div>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Time Slot</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+          </tr>
+        </thead>
+        <tbody id="calendar-body">
+        </tbody>
+      </table>
     </div>
   </div>
 
@@ -156,6 +193,9 @@
       if (!validateYears()) {
         return;
       }
+      if (!validateStyle()) {
+        return;
+      }
   
       // Get the form data as an object
       const formData = new FormData(form);
@@ -167,10 +207,10 @@
       // formData.append('dayOfWeeks', JSON.stringify(items));
       elList = document.querySelectorAll('.start-time');
       const startTimes = Array.from(elList).map(item => item.value.toLowerCase());
-      formData.append('startTimes', JSON.stringify(startTimes));
+      // formData.append('startTimes', JSON.stringify(startTimes));
       elList = document.querySelectorAll('.end-time');
       const endTimes = Array.from(elList).map(item => item.value.toLowerCase())
-      formData.append('endTimes', JSON.stringify(endTimes));
+      // formData.append('endTimes', JSON.stringify(endTimes));
       
       // add courses
       ellist = document.querySelectorAll('.selected-course');
@@ -181,16 +221,18 @@
       elList = document.querySelectorAll('.selected-year');
       const years = Array.from(elList).map(item => item.getAttribute('data-value').toLowerCase());
       // formData.append('years', JSON.stringify(items));
-
-      // add semester
-      formData.append('semester', 1);
-      // add in person
-      formData.append('in_person', 'yes');
+      
+      // add styles
+      elList = document.querySelectorAll('.style')
+      const styles = Array.from(elList).filter((checkbox) => checkbox.checked).map(item => item.value)
 
       const data = Object.fromEntries(formData.entries());
       data.courses = courses;
       data.years = years;
       data.dayOfWeeks = dayOfWeeks;
+      data.startTimes = startTimes;
+      data.endTimes = endTimes;
+      data.styles = styles;
       data.specificCourse = [];
 
       console.log(data);
@@ -204,10 +246,14 @@
         body: JSON.stringify(data),
       })
       .then(response => response.text())
-      .then(data => console.log(data))
+      .then(data => {
+        const json = JSON.parse(data);
+        const scheduleList = json.data;
+        renderSchedule(scheduleList);
+      })
       .catch(error => console.error(error))
     });
-    
+
 
     // Add click event listener to dropdown items
     $('.dropdown-item').on('click', function(e) {
@@ -389,23 +435,180 @@
           return false;
       }
       return true;
-  }
-  function validateYears() {
-    var years = document.getElementsByClassName("year");
-    var selected = false;
-    for (var i = 0; i < years.length; i++) {
-        if (years[i].classList.contains("active")) {
-            selected = true;
-            break;
+    }
+    function validateYears() {
+      var years = document.getElementsByClassName("year");
+      var selected = false;
+      for (var i = 0; i < years.length; i++) {
+          if (years[i].classList.contains("active")) {
+              selected = true;
+              break;
+          }
+      }
+      if (!selected) {
+          alert("Please select at least one year.");
+          return false;
+      }
+      return true;
+    }
+    function validateStyle() {
+      var deliveryInputs = document.getElementsByName("styles");
+      var deliverySelected = false;
+      for (var i = 0; i < deliveryInputs.length; i++) {
+        if (deliveryInputs[i].checked) {
+          deliverySelected = true;
+          break;
         }
-    }
-    if (!selected) {
-        alert("Please select at least one year.");
+      }
+      if (!deliverySelected) {
+        alert("Please select at least one delivery option.");
         return false;
+      }
+      return true;
     }
-    return true;
-}
 
+    // create weekly calender
+    // Set start and end time
+    const startTime = "08:00";
+    const endTime = "20:00";
+
+    // Generate time slots
+    const timeSlots = [];
+    let time = new Date(`1970-01-01T${startTime}:00`);
+    const end = new Date(`1970-01-01T${endTime}:00`);
+    while (time <= end) {
+      timeSlots.push(`${time.getHours().toString().padStart(2, "0")}:${time.getMinutes().toString().padStart(2, "0")}`);
+      time = new Date(time.getTime() + 30 * 60 * 1000); // add 30 minutes
+    }
+
+    // Generate calendar rows
+    const calendarRows = timeSlots.map(timeSlot => {
+      return `
+        <tr>
+          <td>${timeSlot}</td>
+          <td class="schedule-cell" id="mon-${timeSlot}"></td>
+          <td class="schedule-cell" id="tue-${timeSlot}"></td>
+          <td class="schedule-cell" id="wed-${timeSlot}"></td>
+          <td class="schedule-cell" id="thu-${timeSlot}"></td>
+          <td class="schedule-cell" id="fri-${timeSlot}"></td>
+        </tr>
+      `;
+    });
+
+    // Add calendar rows to table body
+    $("#calendar-body").html(calendarRows.join(""));
+
+    // render schedule
+    /**
+      {
+      "course":"cpsc",
+      "dayofweeks": ["tue", "thu" ],
+      "end":"11:0",
+      "number":103,
+      "section":101,
+      "start":"9:30"
+          }*/
+    function renderSchedule(scheduleList) {
+      // clear everything
+      // Clear previous schedule
+      document.querySelectorAll('td.schedule-cell').forEach(cell => {
+        cell.textContent = '';
+      });
+      // remove previous
+      const btn = document.querySelector('#schedule-nextbtn').querySelector('button');
+      if (btn !== null) {
+        document.querySelector('#schedule-nextbtn').removeChild(btn);
+        const p = document.querySelector('#schedule-nextbtn').querySelector('p');
+        document.querySelector('#schedule-nextbtn').removeChild(p);
+      }
+
+
+      if (scheduleList.length == 0) {
+        return;
+      }
+    
+      let currentScheduleIndex = 0;
+      let currentSchedule = scheduleList[currentScheduleIndex];
+      
+      // Generate time slots
+      currentSchedule.forEach(section => {
+        const timeSlots = [];
+        let [hour, minute] = section.start.split(":").map(Number);
+        let time = new Date();
+        time.setHours(hour);
+        time.setMinutes(minute);
+        [hour, minute] = section.end.split(":").map(Number);
+        const end = new Date();
+        end.setHours(hour);
+        end.setMinutes(minute);
+    
+        while (time < end) {
+          timeSlots.push(`${time.getHours().toString().padStart(2, "0")}:${time.getMinutes().toString().padStart(2, "0")}`);
+          time = new Date(time.getTime() + 30 * 60 * 1000); // add 30 minutes
+        }
+    
+        timeSlots.forEach(timeSlot => {
+          section.dayofweeks.forEach(day => {
+            const rowId = `${day}-${timeSlot}`;
+            const rowItem = document.getElementById(rowId);
+            rowItem.textContent = `${section.course.toUpperCase()}${section.number} - ${section.section}`;
+          })
+        });
+      })
+    
+      const nextButton = document.createElement('button');
+      nextButton.classList.add('btn');
+      nextButton.classList.add('btn-success');
+      nextButton.textContent = 'Next';
+      nextButton.addEventListener('click', () => {
+        currentScheduleIndex = (currentScheduleIndex + 1) % scheduleList.length;
+        currentSchedule = scheduleList[currentScheduleIndex];
+    
+        // Clear previous schedule
+        document.querySelectorAll('td.schedule-cell').forEach(cell => {
+          cell.textContent = '';
+        })
+    
+        // Render new schedule
+        currentSchedule.forEach(section => {
+          const timeSlots = [];
+          let [hour, minute] = section.start.split(":").map(Number);
+          let time = new Date();
+          time.setHours(hour);
+          time.setMinutes(minute);
+          [hour, minute] = section.end.split(":").map(Number);
+          const end = new Date();
+          end.setHours(hour);
+          end.setMinutes(minute);
+    
+          while (time < end) {
+            timeSlots.push(`${time.getHours().toString().padStart(2, "0")}:${time.getMinutes().toString().padStart(2, "0")}`);
+            time = new Date(time.getTime() + 30 * 60 * 1000); // add 30 minutes
+          }
+    
+          timeSlots.forEach(timeSlot => {
+            section.dayofweeks.forEach(day => {
+              const rowId = `${day}-${timeSlot}`;
+              const rowItem = document.getElementById(rowId);
+              rowItem.textContent = `${section.course.toUpperCase()}${section.number} - ${section.section}`;
+            })
+          });
+        })
+        // remove previous
+        const p = document.querySelector('#schedule-nextbtn').querySelector('p');
+        document.querySelector('#schedule-nextbtn').removeChild(p);
+        // add 
+        const idx = document.createElement('p');
+        idx.textContent = `Schedule No.${currentScheduleIndex + 1}`
+        document.querySelector('#schedule-nextbtn').appendChild(idx);
+      });
+    
+      document.querySelector('#schedule-nextbtn').appendChild(nextButton);
+      const idx = document.createElement('p');
+      idx.textContent = `Schedule No.${currentScheduleIndex + 1}`
+      document.querySelector('#schedule-nextbtn').appendChild(idx);
+    }
+    
   </script>
 </body>
 </html>

@@ -14,6 +14,7 @@
 :- use_module(library(lists)).
 :- use_module(samplefacts).
 :- use_module(mytime).
+:- use_module(schedule).
 
 % facts files
 :- consult('samplefacts.pl').
@@ -75,16 +76,24 @@ substitute(Template, [var(Name, Value)|Vars], Result) :-
         format('An error occurred while processing the request.~n')
     ).
 
+atom_to_time_string(Hr, Mn, Time) :-
+  atom_concat(Hr, ':', Result), atom_concat(Result, Mn, Time).
 % Convert a section/11 fact to a JSON object
-section_to_json(section(_, Course, Section, _, _, _, _, _, _, _, _, _, _), Json) :-
-  Json = json{course:Course, section:Section}.
+section_to_json(section(_, Course, Number, Section, _, _, _, _, _, days(DayList), time(StartHour, StartMinute), time(EndHour, EndMinute), _), Json) :-
+  atom_to_time_string(StartHour, StartMinute, Start),
+  atom_to_time_string(EndHour, EndMinute, End),
+  Json = json{
+    course:Course, 
+    number: Number,
+    section:Section,
+    dayofweeks: DayList,
+    start: Start,
+    end: End
+  }.
 group_to_sections(Combination, CombinationJson) :-
   maplist(section_to_json, Combination, CombinationJson).
 
 number_to_json(number, json) :- json = json{course: cpsc, number: number}.
-
-in_section(Credit, Course, Number, Year, Semester, IsInPerson) :-
-  section(Credit, Course, Number,_,_,lecture, Year, Semester,_,_,_,_, IsInPerson).
 
 string_atom(String,Atom) :-
   atom_string(Atom,String).
@@ -111,13 +120,13 @@ search_handler(Request) :-
   get_dict(semester, DictIn, SemesterString),
   atom_number(SemesterString, Semester),
   % extract is in person
-  get_dict(in_person, DictIn, IsInPersonString),
-  string_atom(IsInPersonString, IsInPerson),
+  get_dict(styles, DictIn, StylesString),
+  maplist(string_atom, StylesString, Styles),
   % get total credits
   get_dict(credits, DictIn, TotalCreditsString),
   atom_number(TotalCreditsString, TotalCredits),
 
-  format(user_error, "extracted ~w,~w,~w,~w,~w~n", [Courses, Years, Semester, IsInPerson, TotalCredits]),
+  format(user_error, "extracted ~w,~w,~w,~w,~w~n", [Courses, Years, Semester, Styles, TotalCredits]),
 
   % get day of weeks 
   get_dict(dayOfWeeks, DictIn, DayOfWeeksString),
@@ -130,17 +139,17 @@ search_handler(Request) :-
   format(user_error, "extracted ~w,~w,~w~n", [DayOfWeeks, StartTimes, EndTimes]),
 
   % Process the course(s) to get the matching section(s)
-  % findall(Section, (member(Course, Courses), in_section(Credit, Course, Number, Year, Semester, IsInPerson), Section = section(Credit, Course, Number,_,_,lecture, Year,_,_,_,_,_,_)), Sections),
-  findall(section(Credit, Course, Number, Section, _, lecture, Year, Semester, InPerson, Days, StartTime, EndTime, IsInPerson), (
+  findall(section(Credit, Course, Number, Section, _, lecture, Year, Semester, Style, days(Days), StartTime, EndTime, _), (
     member(Course, Courses),
     member(Year, Years),
-    section(Credit, Course, Number, Section,_,lecture, Year, Semester, InPerson, Days, StartTime, EndTime, IsInPerson)
+    member(Style, Styles),
+    section(Credit, Course, Number, Section,_,lecture, Year, Semester, Style, days(Days), StartTime, EndTime, _)
   ), Sections), 
+  % format(user_error, 'Sections: ~w~n', [Sections]),
   filter_sections_by_time(Sections, DayOfWeeks, StartTimes, EndTimes, FilteredSections),
-  format(user_error, 'Sections: ~w~n', [Sections]),
-  format(user_error, 'FilteredSections: ~w~n', [FilteredSections]),
+  % format(user_error, 'FilteredSections: ~w~n', [FilteredSections]),
 
-  section_group(TotalCredits, Sections, SectionGroup),
+  section_group(TotalCredits, FilteredSections, SectionGroup),
   % format(user_error, 'SectionGroup: ~w~n', [SectionGroup]),
 
   % Convert the matching section(s) to a JSON response
@@ -178,7 +187,9 @@ get_combinations(TotalCredits, Sections, Combination) :-
     check_unique_combination(Combination),
      % Check if the combination is unique with respect to (dept, number)
     sort_sections(Combination, SortedCombination),
-    \+ (member(Section, Combination), member(SortedSection, SortedCombination), Section \== SortedSection, same_dept_number(Section, SortedSection)).
+    \+ (member(Section, Combination), member(SortedSection, SortedCombination), Section \== SortedSection, same_dept_number(Section, SortedSection)),
+    % Check if each section in the combination does not overlap with each other
+    no_overlapping_sections(Combination).
 
 
 % combinations(+List, -Combination)
@@ -223,9 +234,10 @@ sort_section(section(Credits, Dept, Number, _, _, _, _, _, _, _, _, _, _), secti
 
 % same_dept_number(+Section1, +Section2)
 % True if Section1 and Section2 have the same (dept, number) pair
-same_dept_number(section(_, Dept1, Number1, _, _, _, _, _, _, _, _, _, _), section(_, Dept2, Number2, _, _, _, _, _, _, _, _, _, _)) :-
+same_dept_number(section(_, Dept1, Number1, Section1, _, _, _, _, _, _, _, _, _), section(_, Dept2, Number2, Seciton2, _, _, _, _, _, _, _, _, _)) :-
     Dept1 == Dept2,
-    Number1 == Number2.
+    Number1 == Number2,
+    Section1 == Section2.
 
 same_combination([], []).
 same_combination([], _) :- false.
