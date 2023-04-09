@@ -90,19 +90,9 @@
             </div>
           </div>
         </div>
-        <!-- <div class="col-md-4">
-          <label class="form-label">week</label>
-          <div>
-            <label class="checkbox-inline"><input type="checkbox" checked name="option[]" value="m">m</label>
-            <label class="checkbox-inline"><input type="checkbox" checked name="option[]" value="t">t</label>
-            <label class="checkbox-inline"><input type="checkbox" checked name="option[]" value="w">w</label>
-            <label class="checkbox-inline"><input type="checkbox" checked name="option[]" value="t">t</label>
-            <label class="checkbox-inline"><input type="checkbox" checked name="option[]" value="f">f</label>
-          </div>
-        </div> -->
         <div class="col-md-8">
           <label for="validationDefault02" class="form-label">Specific Class (Each Classes has to be separated by comma)</label>
-          <input type="text" name="specificCourse" class="form-control" id="validationDefault02" value="" placeholder="e.g.: CPCS312, MATH304">
+          <input type="text" name="specificCourses" class="form-control" id="validationDefault02" value="" placeholder="e.g.: CPCS312, MATH304">
         </div>
         <div class="col-md-2">
           <label for="semester">Select Semester:</label>
@@ -186,6 +176,12 @@
       // Prevent the default form submission behavior
       event.preventDefault();
 
+      // specific courses
+      const specificCourses = document.querySelector('input[name="specificCourses"]').value;
+      const specificCourseList = specificCourseParse(specificCourses);
+      if (specificCourseList === null) return;
+      console.log(specificCourseList);
+
       // Validation
       if (!validateCourses()) {
         return;
@@ -196,8 +192,9 @@
       if (!validateStyle()) {
         return;
       }
+
   
-      // Get the form data as an object
+      // get the form data as an object
       const formData = new FormData(form);
 
       let ellist, items;
@@ -233,7 +230,7 @@
       data.startTimes = startTimes;
       data.endTimes = endTimes;
       data.styles = styles;
-      data.specificCourse = [];
+      data.specificCourses = specificCourseList;
 
       console.log(data);
       
@@ -253,6 +250,31 @@
       })
       .catch(error => console.error(error))
     });
+
+    // specific course parsing
+    function specificCourseParse(specificCourses) {
+      if (specificCourses === '') return [];
+      // Split the input into individual courses
+      const courses = specificCourses.split(',').map(course => course.trim());
+      // console.log(courses);
+
+      // Validate each course and create an object for valid courses
+      const courseList = [];
+      for (const course of courses) {
+        const [courseCode, courseNumber] = course.split(/(\d+)[^\d]*/); // Split course code and number
+        // console.log(courseCode, courseNumber);
+        if (courseCode && courseNumber && /^[a-z]+\d+$/i.test(courseCode + courseNumber)) {
+          courseList.push({ course: courseCode.toLowerCase(), number: courseNumber });
+        }
+      }
+      if (courseList.length != courses.length) {
+        alert("Please input the specific class in correct format");
+        return null;
+      }
+
+      // console.log(courseList); // Output the list of course objects
+      return courseList;
+    }
 
 
     // Add click event listener to dropdown items

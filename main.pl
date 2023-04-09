@@ -103,6 +103,21 @@ is_string_list([X|R]) :-
   string(X),
   is_string_list(R).
 
+specific_course_convert(Input, Output) :-
+  get_dict(course, Input, CourseString),
+  string_atom(CourseString, Course),
+  get_dict(number, Input, NumberString),
+  atom_number(NumberString, Number),
+  Output = {
+    course: Course,
+    number: Number
+  }.
+
+filter_specific_courses({course: Course, number: Number}) :-
+  section(_, Course, Number, _, _, _, _, _, _, _, _, _, _),
+  format(user_error, "!~n", []).
+
+
 % Define the request handler
 search_handler(Request) :-
   http_read_json_dict(Request, DictIn, [as(atom)]),
@@ -122,11 +137,16 @@ search_handler(Request) :-
   % extract is in person
   get_dict(styles, DictIn, StylesString),
   maplist(string_atom, StylesString, Styles),
+  % extract specific courses
+  get_dict(specificCourses, DictIn, SpecificCoursesString),
+  maplist(specific_course_convert, SpecificCoursesString, SpecificCourses),
+  include(filter_specific_courses, SpecificCourses, RequiredCourses),
   % get total credits
   get_dict(credits, DictIn, TotalCreditsString),
   atom_number(TotalCreditsString, TotalCredits),
 
   format(user_error, "extracted ~w,~w,~w,~w,~w~n", [Courses, Years, Semester, Styles, TotalCredits]),
+  format(user_error, "sp courses: ~w => required courses: ~w~n", [SpecificCourses, RequiredCourses]),
 
   % get day of weeks 
   get_dict(dayOfWeeks, DictIn, DayOfWeeksString),
@@ -149,7 +169,7 @@ search_handler(Request) :-
   filter_sections_by_time(Sections, DayOfWeeks, StartTimes, EndTimes, FilteredSections),
   % format(user_error, 'FilteredSections: ~w~n', [FilteredSections]),
 
-  section_group(TotalCredits, FilteredSections, SectionGroup),
+  section_group(TotalCredits, FilteredSections, RequiredCourses, SectionGroup),
   % format(user_error, 'SectionGroup: ~w~n', [SectionGroup]),
 
   % Convert the matching section(s) to a JSON response
@@ -159,11 +179,11 @@ search_handler(Request) :-
   % Log the request and response
   % format(user_error, 'Response: ~w~n', [_{data: Sections}]).
 
-% section_group(+TotalCredits, +Sections, -SectionGroup)
+% section_group(+TotalCredits, +Sections, +RequiredCourses, -SectionGroup)
 % SectionGroup is a list of lists of sections, where the total credits of each list of sections add up to TotalCredits
-section_group(TotalCredits, Sections, SectionGroup) :-
+section_group(TotalCredits, Sections, RequiredCourses, SectionGroup) :-
     % Generate all possible combinations of sections whose total credits add up to TotalCredits
-    (setof(Combination, get_combinations(TotalCredits, Sections, Combination), Combinations) ->
+    (setof(Combination, get_combinations(TotalCredits, Sections, RequiredCourses, Combination), Combinations) ->
         % If get_combinations found some combinations, use them to build SectionGroup
         (
           % format(user_error, 'Combinations: ~w~n', [Combinations]),
@@ -174,9 +194,9 @@ section_group(TotalCredits, Sections, SectionGroup) :-
         SectionGroup = []
     ).
 
-% get_combinations(+TotalCredits, +Sections, -Combination)
+% get_combinations(+TotalCredits, +Sections, +RequiredCourses, -Combination)
 % Combination is a list of sections whose total credits add up to TotalCredits
-get_combinations(TotalCredits, Sections, Combination) :-
+get_combinations(TotalCredits, Sections, RequiredCourses, Combination) :-
     % Generate all possible combinations of sections
     combinations(Sections, Combination),
     % Calculate the total credits of the combination
@@ -189,7 +209,9 @@ get_combinations(TotalCredits, Sections, Combination) :-
     sort_sections(Combination, SortedCombination),
     \+ (member(Section, Combination), member(SortedSection, SortedCombination), Section \== SortedSection, same_dept_number(Section, SortedSection)),
     % Check if each section in the combination does not overlap with each other
-    no_overlapping_sections(Combination).
+    no_overlapping_sections(Combination),
+    % Filter out combinations that do not include the required courses
+    has_required_courses(RequiredCourses, Combination).
 
 
 % combinations(+List, -Combination)
@@ -199,6 +221,12 @@ combinations([X|Xs], [X|Ys]) :-
     combinations(Xs, Ys).
 combinations([_|Xs], Ys) :-
     combinations(Xs, Ys).
+
+% Check if a combination has all the required courses
+has_required_courses([], _).
+has_required_courses([{course: Course, number: Number}|Rest], Combination) :-
+    member(section(_, Course, Number, _, _, _, _, _, _, _, _, _, _), Combination),
+    has_required_courses(Rest, Combination).
 
 % calculate_total_credits(+Sections, -TotalCredits)
 % TotalCredits is the sum of credits of all sections in Sections
