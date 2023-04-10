@@ -1,4 +1,4 @@
-:- module(mytime, [filter_sections_by_time/5, overlaps_section/4]).
+:- module(mytime, [filter_sections_by_time/5, overlaps_section/4, parse_time_string/2]).
 :- format('time.pl is loaded~n').
 
 :- use_module(library(http/thread_httpd)).
