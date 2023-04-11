@@ -1,4 +1,6 @@
-
+:- module(natl, [ask/2]).
+:- format('natl.pl is loaded~n').
+:- discontiguous natl:named/2, natl:course/1, natl:credits/2, natl:in_dept/2, natl:prereqs/2.
 /*
 
 "What sections of CPSC 110 start before 10 AM?"
@@ -101,6 +103,7 @@ question(["which" | L0],L2,Ind,C0,C2) :-
   mp(L1,L2,Ind,C1,C2).
 question(["which" | L0],L1,Ind,C0,C1) :-
   mp(L0,L1,Ind,C0,C1).
+question(["test"|[]],X,Ind,[dept(Ind)|C1],C1).
 
 %named
 course(cpsc121). course(cpsc221).
