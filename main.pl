@@ -154,9 +154,8 @@ specific_course_convert(Input, Output) :-
     number: Number
   }.
 
-filter_specific_courses({course: Course, number: Number}) :-
-  section(_, Course, Number, _, _, _, _, _, _, _, _, _, _),
-  format(user_error, "!~n", []).
+filter_specific_courses(RequiredSections, {course: Course, number: Number}) :-
+  member(section(_, Course, Number, _, _, _, _, _, _, _, _, _, _), RequiredSections).
 
 
 % Define the request handler
@@ -181,7 +180,13 @@ search_handler(Request) :-
   % extract specific courses
   get_dict(specificCourses, DictIn, SpecificCoursesString),
   maplist(specific_course_convert, SpecificCoursesString, SpecificCourses),
-  include(filter_specific_courses, SpecificCourses, RequiredCourses),
+  findall(section(Credit, Course, Number, Section, _, lecture, Year, Semester, Style, days(Days), StartTime, EndTime, _), (
+    member({course: Course, number: Number}, SpecificCourses),
+    member(Style, Styles),
+    section(Credit, Course, Number, Section,_,lecture, Year, Semester, Style, days(Days), StartTime, EndTime, _)
+  ), RequiredSections), 
+  % format(user_error, 'RequiredSections: ~w~n', [RequiredSections]),
+  include(filter_specific_courses(RequiredSections), SpecificCourses, RequiredCourses),
   % get total credits
   get_dict(credits, DictIn, TotalCreditsString),
   atom_number(TotalCreditsString, TotalCredits),
@@ -207,11 +212,14 @@ search_handler(Request) :-
     section(Credit, Course, Number, Section,_,lecture, Year, Semester, Style, days(Days), StartTime, EndTime, _)
   ), Sections), 
   % format(user_error, 'Sections: ~w~n', [Sections]),
-  filter_sections_by_time(Sections, DayOfWeeks, StartTimes, EndTimes, FilteredSections),
+
+  append(Sections, RequiredSections, AllSections),
+  filter_sections_by_time(AllSections, DayOfWeeks, StartTimes, EndTimes, FilteredSections),
   % format(user_error, 'FilteredSections: ~w~n', [FilteredSections]),
 
   section_group(TotalCredits, FilteredSections, RequiredCourses, SectionGroup),
-  % format(user_error, 'SectionGroup: ~w~n', [SectionGroup]),
+  length(SectionGroup, SectionGroupNum),
+  format(user_error, 'SectionGroupNum: ~w~n', [SectionGroupNum]),
 
   % Convert the matching section(s) to a JSON response
   maplist(group_to_sections, SectionGroup, JsonGroup),
