@@ -1,0 +1,508 @@
+<html>
+<head>
+  <title>{{title}}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.min.css" />
+  <style>
+    html {
+      overflow-y: scroll;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    }
+    html::-webkit-scrollbar { /* WebKit */
+      width: 0;
+      height: 0;
+    }
+    .selected-item {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.5rem;
+      margin: 0.25rem;
+      background-color: #f1f1f1;
+      border-radius: 0.25rem;
+    }
+
+    .selected-item span {
+      margin-right: 0.5rem;
+    }
+
+    .selected-item i {
+      cursor: pointer;
+    }
+
+    label.checkbox-inline {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    #txt {
+      margin: 10px;
+      width: 500px;
+    }
+
+    #nl-form {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+    }
+
+    #nl-form input {
+      margin-top: 10px;
+      align-items: start;
+      line-height: 2;
+      width:700px;
+
+    }
+  </style>
+</head>
+<body class="container">
+  <div id="header">
+    {{body}}
+  </div>
+  <div id="body">
+    <div id="interface" class="pb-3">
+      <div class="btn-group" role="group" aria-label="Default button group">
+        <a href="/" name="query" type="button" class="btn btn-outline-success">Standard Form</a>
+        <a href="/natl" type="button" class="btn btn-outline-success">Natural Language</a>
+      </div>
+    </div>
+    <div class="pt-3 border border-info">
+      <form id="nl-form" class="row g-3 mx-2" method="POST" action="/ask">
+        <input id="txt" name="query" type="text" class="form-control" placeholder="What courses start after 9AM on TT?" aria-label="..." aria-describedby="...">
+        <input type="submit" value="submit">
+        <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // form
+    const form = document.querySelector('#nl-form');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const query = document.querySelector('input[name="query"]').value;
+      console.log(query);
+      const data = {};
+      data.query = query.toLowerCase();
+      if (data.query.endsWith('?')) 
+        data.query = data.query.slice(0, -1);
+      const url = '/ask';
+      console.log(data);
+      fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data),
+      })
+      .then(response => response.text())
+      .then(data => {
+        const json = JSON.parse(data);
+        const rdata = json.data;
+        console.log(rdata);
+      })
+      .catch(error => console.error(error))
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // specific course parsing
+    function specificCourseParse(specificCourses) {
+      if (specificCourses === '') return [];
+      // Split the input into individual courses
+      const courses = specificCourses.split(',').map(course => course.trim());
+      // console.log(courses);
+
+      // Validate each course and create an object for valid courses
+      const courseList = [];
+      for (const course of courses) {
+        const [courseCode, courseNumber] = course.split(/(\d+)[^\d]*/); // Split course code and number
+        // console.log(courseCode, courseNumber);
+        if (courseCode && courseNumber && /^[a-z]+\d+$/i.test(courseCode + courseNumber)) {
+          courseList.push({ course: courseCode.toLowerCase(), number: courseNumber });
+        }
+      }
+      if (courseList.length != courses.length) {
+        alert("Please input the specific class in correct format");
+        return null;
+      }
+
+      // console.log(courseList); // Output the list of course objects
+      return courseList;
+    }
+
+
+    // Add click event listener to dropdown items
+    $('.dropdown-item').on('click', function(e) {
+      e.preventDefault();
+      var selectedValue = $(this).data('value');
+      $(this).toggleClass('active');
+      let label = $(this).parent().parent().attr("aria-labelledby");
+      updateSelectedOptions(label);
+    });
+
+    // Add click event listener to cancel icons
+    $('#selectedOptions').on('click', '.cancel-icon', function() {
+      var selectedValue = $(this).closest('.selected-item').data('value');
+      $('[data-value="' + selectedValue + '"]').removeClass('active');
+      let label = $('[data-value="' + selectedValue + '"]').parent().parent().attr("aria-labelledby");
+      updateSelectedOptions(label);
+    });
+    $('#selectedOptionsYear').on('click', '.cancel-icon', function() {
+      var selectedValue = $(this).closest('.selected-item').data('value');
+      $('[data-value="' + selectedValue + '"]').removeClass('active');
+      let label = $('[data-value="' + selectedValue + '"]').parent().parent().attr("aria-labelledby");
+      updateSelectedOptions(label);
+    });
+
+    // Update selected options in card text
+    function updateSelectedOptions(label) {
+      var selectedValues = [];
+      if (label === "multiDropdownYear") {
+        $('.dropdown-item.year.active').each(function() {
+          selectedValues.push($(this).data('value'));
+        });
+      } else {
+        $('.dropdown-item.course.active').each(function() {
+          selectedValues.push($(this).data('value'));
+        });
+      }
+    
+      const selectedOptions = (label === "multiDropdownYear") ? '#selectedOptionsYear' : '#selectedOptions';
+      const name = (label === "multiDropdownYear") ? 'year' : 'course';
+      var $selectedOptionsContainer = $(selectedOptions);
+      $selectedOptionsContainer.empty();
+      if (selectedValues.length > 0) {
+        $.each(selectedValues, function(index, value) {
+          var $selectedItem = $('<div>', {class: `selected-item selected-${name}`, 'data-value': value}).appendTo($selectedOptionsContainer);
+          $('<span>', {text: value}).appendTo($selectedItem);
+          $('<i>', {class: 'bi bi-x-circle cancel-icon'}).appendTo($selectedItem);
+        });
+      } else {
+        $selectedOptionsContainer.html('<p>No options selected.</p>');
+      }
+    }
+
+    // Add Time Slot button
+    const addTimeSlotBtn = document.querySelector('.add-time-slot');
+    addTimeSlotBtn.addEventListener('click', addTimeSlot);
+
+    // Remove Time Slot button
+    document.addEventListener('click', function(event) {
+      if (event.target && event.target.classList.contains('remove-time-slot')) {
+        const timeSlot = event.target.closest('.time-slot');
+        timeSlot.remove();
+      }
+    });
+
+    function addTimeSlot() {
+      const timeSlotsContainer = document.getElementById('time-slots-container');
+      
+      // Create new time slot
+      const newTimeSlot = document.createElement('div');
+      newTimeSlot.classList.add('time-slot');
+      newTimeSlot.classList.add('row');
+      
+      // Add day of week form field
+      const dayOfWeekGroup = document.createElement('div');
+      dayOfWeekGroup.classList.add('col-md-2');
+      
+      const dayOfWeekLabel = document.createElement('label');
+      dayOfWeekLabel.textContent = 'Day of Week'
+      dayOfWeekLabel.setAttribute('for', 'day-of-week-1');
+
+      const dayOfWeekSelect = document.createElement('select');
+      dayOfWeekSelect.setAttribute('id', 'day-of-week-1');
+      // dayOfWeekSelect.setAttribute('name', 'day-of-week[]');
+      dayOfWeekSelect.classList.add('form-control', 'day-of-week');
+      dayOfWeekSelect.setAttribute('required', '');
+
+      const dayOfWeekOption = document.createElement('option');
+      dayOfWeekOption.textContent = 'Select a day'
+      dayOfWeekOption.setAttribute('value', '');
+      const dayOfWeekMonday = document.createElement('option');
+      dayOfWeekMonday.textContent = 'Monday'
+      dayOfWeekMonday.setAttribute('value', 'Mon');
+      const dayOfWeekTuesday = document.createElement('option');
+      dayOfWeekTuesday.textContent = 'Tuesday'
+      dayOfWeekTuesday.setAttribute('value', 'Tue');
+      const dayOfWeekWednesday = document.createElement('option');
+      dayOfWeekWednesday.textContent = 'Wednesday'
+      dayOfWeekWednesday.setAttribute('value', 'Wed');
+      const dayOfWeekThursday = document.createElement('option');
+      dayOfWeekThursday.textContent = 'Thursday'
+      dayOfWeekThursday.setAttribute('value', 'Thu');
+      const dayOfWeekFriday = document.createElement('option');
+      dayOfWeekFriday.textContent = 'Friday'
+      dayOfWeekFriday.setAttribute('value', 'Fri');
+      dayOfWeekSelect.appendChild(dayOfWeekOption);
+      dayOfWeekSelect.appendChild(dayOfWeekMonday);
+      dayOfWeekSelect.appendChild(dayOfWeekTuesday);
+      dayOfWeekSelect.appendChild(dayOfWeekWednesday);
+      dayOfWeekSelect.appendChild(dayOfWeekThursday);
+      dayOfWeekSelect.appendChild(dayOfWeekFriday);
+      
+      dayOfWeekGroup.appendChild(dayOfWeekLabel);
+      dayOfWeekGroup.appendChild(dayOfWeekSelect);
+
+      
+      // Add start time form field
+      const startTimeGroup = document.createElement('div');
+      startTimeGroup.classList.add('form-group');
+      startTimeGroup.classList.add('col-md-4');
+      
+      const startTimeLabel = document.createElement('label');
+      startTimeLabel.textContent = 'Start Time';
+      startTimeLabel.setAttribute('for', 'start-time');
+      
+      const startTimeInput = document.createElement('input');
+      startTimeInput.setAttribute('type', 'time');
+      startTimeInput.classList.add('form-control', 'start-time');
+      // startTimeInput.setAttribute('name', 'start-time[]');
+      startTimeInput.setAttribute('required', '');
+      
+      startTimeGroup.appendChild(startTimeLabel);
+      startTimeGroup.appendChild(startTimeInput);
+      
+      // Add end time form field
+      const endTimeGroup = document.createElement('div');
+      endTimeGroup.classList.add('form-group');
+      endTimeGroup.classList.add('col-md-4');
+      
+      const endTimeLabel = document.createElement('label');
+      endTimeLabel.textContent = 'End Time';
+      endTimeLabel.setAttribute('for', 'end-time');
+      
+      const endTimeInput = document.createElement('input');
+      endTimeInput.setAttribute('type', 'time');
+      endTimeInput.classList.add('form-control', 'end-time');
+      // endTimeInput.setAttribute('name', 'end-time[]');
+      endTimeInput.setAttribute('required', '');
+      
+      endTimeGroup.appendChild(endTimeLabel);
+      endTimeGroup.appendChild(endTimeInput);
+      
+      // Add remove button
+      const removeBtn = document.createElement('button');
+      removeBtn.classList.add('btn', 'btn-danger', 'remove-time-slot', 'col-md-1');
+      removeBtn.setAttribute('type', 'button');
+      removeBtn.textContent = 'Remove';
+      
+      // Add form fields and remove button to time slot
+      newTimeSlot.appendChild(dayOfWeekGroup);
+      newTimeSlot.appendChild(startTimeGroup);
+      newTimeSlot.appendChild(endTimeGroup);
+      newTimeSlot.appendChild(removeBtn);
+      
+      // Add time slot to container
+      timeSlotsContainer.appendChild(newTimeSlot);
+    }
+
+    function validateCourses() {
+      var courses = document.getElementsByClassName("course");
+      var selected = false;
+      for (var i = 0; i < courses.length; i++) {
+          if (courses[i].classList.contains("active")) {
+              selected = true;
+              break;
+          }
+      }
+      if (!selected) {
+          alert("Please select at least one course.");
+          return false;
+      }
+      return true;
+    }
+    function validateYears() {
+      var years = document.getElementsByClassName("year");
+      var selected = false;
+      for (var i = 0; i < years.length; i++) {
+          if (years[i].classList.contains("active")) {
+              selected = true;
+              break;
+          }
+      }
+      if (!selected) {
+          alert("Please select at least one year.");
+          return false;
+      }
+      return true;
+    }
+    function validateStyle() {
+      var deliveryInputs = document.getElementsByName("styles");
+      var deliverySelected = false;
+      for (var i = 0; i < deliveryInputs.length; i++) {
+        if (deliveryInputs[i].checked) {
+          deliverySelected = true;
+          break;
+        }
+      }
+      if (!deliverySelected) {
+        alert("Please select at least one delivery option.");
+        return false;
+      }
+      return true;
+    }
+
+    // create weekly calender
+    // Set start and end time
+    const startTime = "08:00";
+    const endTime = "20:00";
+
+    // Generate time slots
+    const timeSlots = [];
+    let time = new Date(`1970-01-01T${startTime}:00`);
+    const end = new Date(`1970-01-01T${endTime}:00`);
+    while (time <= end) {
+      timeSlots.push(`${time.getHours().toString().padStart(2, "0")}:${time.getMinutes().toString().padStart(2, "0")}`);
+      time = new Date(time.getTime() + 30 * 60 * 1000); // add 30 minutes
+    }
+
+    // Generate calendar rows
+    const calendarRows = timeSlots.map(timeSlot => {
+      return `
+        <tr>
+          <td>${timeSlot}</td>
+          <td class="schedule-cell" id="mon-${timeSlot}"></td>
+          <td class="schedule-cell" id="tue-${timeSlot}"></td>
+          <td class="schedule-cell" id="wed-${timeSlot}"></td>
+          <td class="schedule-cell" id="thu-${timeSlot}"></td>
+          <td class="schedule-cell" id="fri-${timeSlot}"></td>
+        </tr>
+      `;
+    });
+
+    // Add calendar rows to table body
+    $("#calendar-body").html(calendarRows.join(""));
+
+    // render schedule
+    /**
+      {
+      "course":"cpsc",
+      "dayofweeks": ["tue", "thu" ],
+      "end":"11:0",
+      "number":103,
+      "section":101,
+      "start":"9:30"
+          }*/
+    function renderSchedule(scheduleList) {
+      // clear everything
+      // Clear previous schedule
+      document.querySelectorAll('td.schedule-cell').forEach(cell => {
+        cell.textContent = '';
+      });
+      // remove previous
+      const btn = document.querySelector('#schedule-nextbtn').querySelector('button');
+      if (btn !== null) {
+        document.querySelector('#schedule-nextbtn').removeChild(btn);
+        const p = document.querySelector('#schedule-nextbtn').querySelector('p');
+        document.querySelector('#schedule-nextbtn').removeChild(p);
+      }
+
+
+      if (scheduleList.length == 0) {
+        return;
+      }
+    
+      let currentScheduleIndex = 0;
+      let currentSchedule = scheduleList[currentScheduleIndex];
+      
+      // Generate time slots
+      currentSchedule.forEach(section => {
+        const timeSlots = [];
+        let [hour, minute] = section.start.split(":").map(Number);
+        let time = new Date();
+        time.setHours(hour);
+        time.setMinutes(minute);
+        [hour, minute] = section.end.split(":").map(Number);
+        const end = new Date();
+        end.setHours(hour);
+        end.setMinutes(minute);
+    
+        while (time < end) {
+          timeSlots.push(`${time.getHours().toString().padStart(2, "0")}:${time.getMinutes().toString().padStart(2, "0")}`);
+          time = new Date(time.getTime() + 30 * 60 * 1000); // add 30 minutes
+        }
+    
+        timeSlots.forEach(timeSlot => {
+          section.dayofweeks.forEach(day => {
+            const rowId = `${day}-${timeSlot}`;
+            const rowItem = document.getElementById(rowId);
+            rowItem.textContent = `${section.course.toUpperCase()}${section.number} - ${section.section}`;
+          })
+        });
+      })
+    
+      const nextButton = document.createElement('button');
+      nextButton.classList.add('btn');
+      nextButton.classList.add('btn-success');
+      nextButton.textContent = 'Next';
+      nextButton.addEventListener('click', () => {
+        currentScheduleIndex = (currentScheduleIndex + 1) % scheduleList.length;
+        currentSchedule = scheduleList[currentScheduleIndex];
+    
+        // Clear previous schedule
+        document.querySelectorAll('td.schedule-cell').forEach(cell => {
+          cell.textContent = '';
+        })
+    
+        // Render new schedule
+        currentSchedule.forEach(section => {
+          const timeSlots = [];
+          let [hour, minute] = section.start.split(":").map(Number);
+          let time = new Date();
+          time.setHours(hour);
+          time.setMinutes(minute);
+          [hour, minute] = section.end.split(":").map(Number);
+          const end = new Date();
+          end.setHours(hour);
+          end.setMinutes(minute);
+    
+          while (time < end) {
+            timeSlots.push(`${time.getHours().toString().padStart(2, "0")}:${time.getMinutes().toString().padStart(2, "0")}`);
+            time = new Date(time.getTime() + 30 * 60 * 1000); // add 30 minutes
+          }
+    
+          timeSlots.forEach(timeSlot => {
+            section.dayofweeks.forEach(day => {
+              const rowId = `${day}-${timeSlot}`;
+              const rowItem = document.getElementById(rowId);
+              rowItem.textContent = `${section.course.toUpperCase()}${section.number} - ${section.section}`;
+            })
+          });
+        })
+        // remove previous
+        const p = document.querySelector('#schedule-nextbtn').querySelector('p');
+        document.querySelector('#schedule-nextbtn').removeChild(p);
+        // add 
+        const idx = document.createElement('p');
+        idx.textContent = `Schedule No.${currentScheduleIndex + 1}`
+        document.querySelector('#schedule-nextbtn').appendChild(idx);
+      });
+    
+      document.querySelector('#schedule-nextbtn').appendChild(nextButton);
+      const idx = document.createElement('p');
+      idx.textContent = `Schedule No.${currentScheduleIndex + 1}`
+      document.querySelector('#schedule-nextbtn').appendChild(idx);
+    }
+    
+  </script>
+</body>
+</html>
