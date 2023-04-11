@@ -103,7 +103,8 @@
       .then(data => {
         const json = JSON.parse(data);
         const rdata = json.data;
-        console.log(rdata);
+        form.children[2].innerHTML = rdata;
+        // console.log(rdata);
       })
       .catch(error => console.error(error))
     });
