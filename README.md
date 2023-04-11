@@ -26,3 +26,8 @@ what you need is only SWIPL
 - Support the flexible timespan for the class such that it does not have the same start time of the lecture.
   - e.g. Monday 15:00 - 17:00, Thursday 9:00 - 10:00
 - Add the weight on the each course facts based on the user status then sort the recommended schedule by the score of each.
+
+- Improve the web natural language interface
+- Added more natural language expressions to allow for more flexible nl queries
+
+- Change course and section facts to allow for more efficient filtering
